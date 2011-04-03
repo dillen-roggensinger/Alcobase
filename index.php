@@ -40,5 +40,3 @@ oci_close($con);
 <<<<<<< HEAD
 
 PLEASE DON'T CHANGE ME :(
-=======
->>>>>>> 7e649ff558918973dfa175d8d58637517b1202a1
