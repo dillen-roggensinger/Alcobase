@@ -8,6 +8,17 @@
 
 <?php
 
+require_once('Validator.php');
+echo("This should be a valid username: ");
+echo("The length is :". strlen(md5("random")));
+if(Validator::validUsername("b34235234234")){
+	echo("It is!<br>");
+}
+else{
+	echo("It isn't :(<br>");
+}
+
+
 //include("webpage.php");
 
 $con = oci_connect("der2127", "c00kie5", "w4111c.cs.columbia.edu:1521/adb");
@@ -16,7 +27,7 @@ if (!$con){
 	echo "<br />ERROR: ".$e['message']."<br />";
 }
 
-$query = "SELECT * FROM alcohol, sold_at where alcohol.did=sold_at.did";
+$query = "SELECT * FROM bought";
 
 
 
@@ -25,18 +36,20 @@ $err=oci_execute($stid);
 
 
 while($row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS)){
-echo $row['NAME'] . "  " . $row['LOCATION'] . "  " . $row['PRICE'];
-echo "<br />";
+	echo "INSERT INTO bought VALUES(" . $row['AID'] . "," . $row['DID'] .");";
+	echo "<br />";
 }
 
+//"INSERT INTO account VALUES('" . $row['NAME'] . "','" . $row['DRINK'] . "'," . $row['VOLUME'] . ",'"
+//	. $row['BRAND']. "'," . $row['DID']. "," . $row['ALCOHOL_CONTENT']. ",'" . $row['COUNTRY']. "'," . $row['CALORIES']
+//	. ",'" . $row['TYPE']. "'," . $row['YEAR']. ",'" . $row['FLAVOR']. "'," . $row['RATING'] . ");";
 
 oci_close($con);
 ?>
 
-<p>I ain't a part of your system!</p>
+
+
+
 
 </body>
 </html>
-<<<<<<< HEAD
-
-PLEASE DON'T CHANGE ME :(
