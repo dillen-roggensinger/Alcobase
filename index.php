@@ -33,9 +33,12 @@ echo "<br />";
 oci_close($con);
 ?>
 
-
+<p>I ain't a part of your system!</p>
 
 </body>
 </html>
+<<<<<<< HEAD
 
 PLEASE DON'T CHANGE ME :(
+=======
+>>>>>>> 7e649ff558918973dfa175d8d58637517b1202a1
