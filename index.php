@@ -33,7 +33,7 @@ echo "<br />";
 oci_close($con);
 ?>
 
-
+<p>I ain't a part of your system!</p>
 
 </body>
 </html>
