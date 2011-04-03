@@ -9,7 +9,7 @@
 <form action="cgi-bin/login.pl.cgi" method="POST">
 <table align="center">
 	<tr>
-		<td><a href="login.php"><h2>Welcome to Alcobase, your one stop source for all your alcoholic--I meancollege student--needs!</h2></a></td>
+		<td><a href="login.php"><h2>Welcome to Alcobase, your one stop source for all your alcoholic--I mean college student needs!</h2></a></td>
 	</tr>
 	<tr>
 		<td><a href="login.php"><h2>Login</h2></a></td>
