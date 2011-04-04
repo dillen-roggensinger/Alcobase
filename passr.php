@@ -5,12 +5,19 @@ $hf = new HeaderFooter();
 $hf->header();
 ?>
 
+<form action="Scripts/login.php" method="POST">
 <table align="center">
 	<tr>
-		<td><h3>Welcome to Alcobase, the one stop source for all your college essentials!</h3></a></td>
+		<td colspan="2"><h2>Reset Password</h2></td>
+	</tr>
+	<tr>
+		<td>Email:</td>
+		<td><input type="text" name="email"></td>
 	</tr>
 </table>
+<p align="center"><input type="submit" value="Submit"></p>
 
+</form>
 <?php 
 $hf->footer();
 ?>

@@ -10,16 +10,16 @@ $hf->header();
 		<td colspan="10"><h2>Browse</h2></td>
 	</tr>
 	<tr>
-		<td>Name</td>
-		<td>Drink</td>
-		<td>Volume</td>
-		<td>Brand</td>
-		<td>Alcohol Content</td>
-		<td>Country</td>
-		<td>Store Name</td>
-		<td>Store Type</td>
-		<td>Quantity</td>
-		<td>Price</td>
+		<td>&uarr; Name &darr;</td>
+		<td>&uarr; Drink &darr;</td>
+		<td>&uarr; Volume &darr;</td>
+		<td>&uarr; Brand &darr;</td>
+		<td>&uarr; Alcohol Content &darr;</td>
+		<td>&uarr; Country &darr;</td>
+		<td>&uarr; Store Name &darr;</td>
+		<td>&uarr; Store Type &darr;</td>
+		<td>&uarr; Quantity &darr;</td>
+		<td>&uarr; Price &darr;</td>
 	</tr>
 </table>
 
