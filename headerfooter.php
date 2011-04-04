@@ -8,9 +8,7 @@ class HeaderFooter{
 			<h1>ALCOBASE</h1>\n
 			</div>\n 
 			<div id='content'>\n
-			poop
-			</div>\n
-			<div id='content'>";
+			<p> </p>";
 	}
 	public function footer(){
 		echo "</div>\n
