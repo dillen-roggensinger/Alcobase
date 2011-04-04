@@ -27,8 +27,8 @@ body {
 }
 
 #contents {
-	position:absolute; 
-	top:150px;
+	position:fixed; 
+	top:120px;
 	left:0;
 	bottom:0px; 
 	right:0; 
