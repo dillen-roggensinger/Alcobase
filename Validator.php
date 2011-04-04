@@ -61,28 +61,28 @@ class Validator{
 	}
 	
 	/*Validate an username.
-	 * A username must have between 8-20 characters, start with a character
+	 * A username must have between 8-32 characters, start with a character
 	 * and have at least 1 letter and 1 number. Only letters, underscores and
 	 * numbers are allowed.
 	 */
 	function validUsername($username){
-		if(strlen($username)>=8 && strlen($username)<=20){
+		if(strlen($username)>=8 && strlen($username)<=32){
 			$test = filter_var($username, FILTER_VALIDATE_REGEXP,array('options'=>array('regexp'=>'/^[a-zA-Z]\w*$/')));
 			if (isset($test)){
-				return $test;
+				return true;
 			}
 			return false;
 		}
 	}
 	
 	/*Validate an password.
-	 * A username must have between 8-20 characters, start with a character
+	 * A username must have between 8-32 characters, start with a character
 	 * and have at least 1 letter and 1 number. Only letters, underscores and
 	 * numbers are allowed.
 	 */
 	function validPassword($password){
-		if(strlen($password)>=8 && strlen($password)<=20){
-				$test = filter_var($password, FILTER_VALIDATE_REGEXP,array('options'=>array('regexp'=>'/^[\w-!@#\$%\^&\*\(\)]*$/')));
+		if(strlen($password)>=8 && strlen($password)<=32){
+			$test = filter_var($password, FILTER_VALIDATE_REGEXP,array('options'=>array('regexp'=>'/^\w+$/')));
 			if (isset($test)){
 				return true;
 			}
