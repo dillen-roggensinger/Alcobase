@@ -6,8 +6,9 @@ class HeaderFooter{
 			</head><body>\n
 			<div id='header'>\n
 			<h1>ALCOBASE</h1>\n
+			<h3><a href='index.html'>Login</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='signup.html'>Sign Up</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='signup.html'>Browse</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='signup.html'>Search</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='password.html'>Reset Password</a></h3>\n
 			</div>\n 
-			<div id='content'>\n
+			<div id='contents'>\n
 			<p> </p>";
 	}
 	public function footer(){
