@@ -1,6 +1,5 @@
 <? 
-include('headerfooter.php'); 
-//header();
+include('header.php'); 
 ?>
 
 <table align="center">
@@ -20,5 +19,5 @@ include('headerfooter.php');
 <p align="center"><input type="submit" value="Log In"></p>
 
 <?php 
-//footer(); 
+include('footer.php');
 ?>
