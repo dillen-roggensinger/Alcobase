@@ -7,23 +7,21 @@ $hf->header();
 
 <table align="center">
 	<tr>
-		<td><h2>Browse</h2></td>
+		<td colspan="10"><h2>Browse</h2></td>
 	</tr>
 	<tr>
-		<td>/\ <h3>Name</h3> \/</td>
-		<td>/\ <h3>Drink</h3> \/</td>
-		<td>/\ <h3>Volume</h3> \/</td>
-		<td>/\ <h3>Brand</h3> \/</td>
-		<td>/\ <h3>Alcohol Content</h3> \/</td>
-		<td>/\ <h3>Country</h3> \/</td>
-		<td>/\ <h3>Location</h3> \/</td>
-		<td>/\ <h3>Store Name</h3> \/</td>
-		<td>/\ <h3>Store Type</h3> \/</td>
-		<td>/\ <h3>Quantity</h3> \/</td>
-		<td>/\ <h3>Price</h3> \/</td>
+		<td>Name</td>
+		<td>Drink</td>
+		<td>Volume</td>
+		<td>Brand</td>
+		<td>Alcohol Content</td>
+		<td>Country</td>
+		<td>Store Name</td>
+		<td>Store Type</td>
+		<td>Quantity</td>
+		<td>Price</td>
 	</tr>
 </table>
-
 
 <?php 
 $hf->footer();
