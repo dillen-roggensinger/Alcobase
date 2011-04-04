@@ -1,6 +1,6 @@
 <? 
 include('headerfooter.php'); 
-header();
+//header();
 ?>
 
 <table align="center">
@@ -19,4 +19,6 @@ header();
 </table>
 <p align="center"><input type="submit" value="Log In"></p>
 
-<?php footer(); ?>
+<?php 
+//footer(); 
+?>
