@@ -6,6 +6,9 @@ class HeaderFooter{
 			</head><body>\n
 			<div id='header'>\n
 			<h1>ALCOBASE</h1>\n
+			</div>\n 
+			<div id='content'>\n
+			poop
 			</div>\n
 			<div id='content'>";
 	}
