@@ -1,6 +1,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
 <? 
-include('header.php'); 
+include('headerfooter.php'); 
+$hf = new HeaderFooter();
+$hf->header();
 ?>
 
 <table align="center">
@@ -20,5 +22,5 @@ include('header.php');
 <p align="center"><input type="submit" value="Log In"></p>
 
 <?php 
-include('footer.php');
+$hf->footer();
 ?>
