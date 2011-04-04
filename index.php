@@ -1,5 +1,5 @@
 <? 
-include('head.php'); 
+include('headerfooter.php'); 
 header();
 ?>
 
