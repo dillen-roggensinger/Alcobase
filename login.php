@@ -1,6 +1,8 @@
-<? 
-include('headerfoooter.php'); 
-header();
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<?php
+include('headerfooter.php'); 
+$hf = new HeaderFooter();
+$hf->header();
 ?>
 
 <form action="Scripts/login.php" method="POST">
@@ -20,4 +22,6 @@ header();
 <p align="center"><input type="submit" value="Log In"></p>
 
 </form>
-<?php footer(); ?>
+<?php 
+$hf->footer();
+?>
