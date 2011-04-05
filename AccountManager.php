@@ -6,33 +6,27 @@ class AccountManager{
 	 * 
 	 */
 	function createAccount($admin,$username, $password, $email){
-		echo("Here we go!");
-		require_once("AccountManager.php");
-		if(!AccountManager::usernameAvailable($username)){	//Checks if it's valid and not already taken
+		if(!$this->usernameAvailable($username)){	//Checks if it's valid and not already taken
 			echo("<p>Username already exists!<p>");
 			return false;
 		}
-		if(!AccountManager::emailAvailable($email)){	//Checks if it's valid and not already registered to another account
+		if(!$this->emailAvailable($email)){	//Checks if it's valid and not already registered to another account
 			echo("<p>Email already registered. Reset your password if you forgot it!<p>");
 			return false;
 		}
 		require_once("Validator.php");
-		if(!Validator::validPassword($password)){	//Checks that it is valid
+		$val=new Validator();
+		if(!$val->validPassword($password)){	//Checks that it is valid
 			echo("<p>Invalid password!<p>");
 			return false;
 		}
-		echo("Inserting into database!<br>");
-//		echo("Admin: ".$admin."<br>Username: ".$username."<br>Password: ".$password."<br>Email: ".$email."<br>");
+
 		$query="INSERT INTO account VALUES(" . $admin . ",'" . $username . "','" . md5($password) . "','" . $email . "')";
-		
-		echo("Query: ".$query);
 		
 		$conn = oci_connect("der2127", "c00kie5", "w4111c.cs.columbia.edu:1521/adb");
 		$stid = oci_parse($conn, $query);
 		$err=oci_execute($stid);
 				
-		echo("Emailing new user!");
-		
 		// subject
 		$subject = "Registration for " . $username;
 		
@@ -55,7 +49,8 @@ class AccountManager{
 		';
 		
 		require_once("LoginManager.php");
-		LoginManager::emailUser($email, $username, $subject, $body);
+		$lm=new LoginManager();
+		$lm->emailUser($email, $username, $subject, $body);
 		return true;
 	}
 	
@@ -64,7 +59,8 @@ class AccountManager{
 	 */
 	function usernameAvailable($username){
 		require_once("Validator.php");
-		if(!Validator::validUsername($username)){	//Checks that it is valid
+		$val=new Validator();
+		if(!$val->validUsername($username)){	//Checks that it is valid
 			echo("<p>Invalid username!<p>");
 			return false;
 		}
@@ -91,7 +87,8 @@ class AccountManager{
 	 */
 	function emailAvailable($email){
 		require_once("Validator.php");
-		if(!Validator::validEmail($email)){	//Checks that it is valid
+		$lm=new LoginManager();
+		if(!$lm->validEmail($email)){	//Checks that it is valid
 			echo("<p>Invalid email!<p>");
 			return false;
 		}
@@ -118,15 +115,16 @@ class AccountManager{
 	 */
 	function changePassword($username,$oldPass,$newPass){
 		require_once("Validator.php");
-		if(!Validator::validUsername($username)){	//Checks to see if it is valid
+		$val=new Validator();
+		if(!$val->validUsername($username)){	//Checks to see if it is valid
 			echo("<p>Invalid username!<p>");
 			return false;
 		}
-		if(!Validator::validPassword($oldPass)){	//Checks to see if it is valid
+		if(!$val->validPassword($oldPass)){	//Checks to see if it is valid
 			echo("<p>Invalid old password!<p>");
 			return false;
 		}
-		if(!Validator::validPassword($newPass)){	//Checks to see if it is valid
+		if(!$val->validPassword($newPass)){	//Checks to see if it is valid
 			echo("<p>Invalid new password!<p>");
 			return false;
 		}
@@ -174,7 +172,8 @@ class AccountManager{
 		';
 		
 		require_once("LoginManager.php");
-		LoginManager::emailUser($email, $username, $subject, $body);
+		$lm=new LoginManager();
+		$lm->emailUser($email, $username, $subject, $body);
 		return true;
 	}
 }

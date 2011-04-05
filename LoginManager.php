@@ -6,11 +6,12 @@ class LoginManager{
 	 */
 	function checkPassword($username,$password){
 		require_once("Validator.php");
-		if(!Validator::validUsername($username)){	//Check to see if it is valid
+		$val=new Validator();
+		if(!$val->validUsername($username)){	//Check to see if it is valid
 			echo("<p>Invalid username!<p>");
 			return false;
 		}
-		if(!Validator::validPassword($password)){	//Check to see if it is valid
+		if(!$val->validPassword($password)){	//Check to see if it is valid
 			echo("<p>Invalid password!<p>");
 			return false;
 		}
@@ -24,8 +25,6 @@ class LoginManager{
 		$err=oci_execute($stid);
 		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
 
-		echo("Row[0] is: ".$row[0]."<br>");
-		
 		if(!isset($row[0])){
 			echo("<p>Username does not exist!<p>");
 			return false;
@@ -44,7 +43,8 @@ class LoginManager{
 	 */
 	function resetPassword($email){
 		require_once("Validator.php");
-		if(!Validator::validEmail($email)){	//Check to see if it is valid
+		$val=new Validator();
+		if(!$val->validEmail($email)){	//Check to see if it is valid
 			echo("<p>Invalid email!<p>");
 			return false;
 		}
@@ -93,8 +93,7 @@ class LoginManager{
 		</html>
 		';
 		
-		require_once("LoginManager.php");
-		LoginManager::emailUser($email, $username, $subject, $body);
+		$this->emailUser($email, $username, $subject, $body);
 		return true;
 	}
 	

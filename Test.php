@@ -3,28 +3,32 @@
 require_once('LoginManager.php');
 require_once('AccountManager.php');
 echo("Matching correct password!<br>");
-if(LoginManager::checkPassword("ninjaturtles","p4ssw0rd")){
+
+$lm=new LoginManager();
+$am=new AccountManager();
+
+if($lm->checkPassword("ninjaturtles","p4ssw0rd")){
 	echo("Matched!<br><br>");
 }
 else{
 	echo("No dice :(<br><br>");
 }
 echo("Matching incorrect password!<br>");
-if(LoginManager::checkPassword("ninjaturtles","abcd1234")){
+if($lm->checkPassword("ninjaturtles","abcd1234")){
 	echo("Matched!<br><br>");
 }
 else{
 	echo("No dice :(<br><br>");
 }
 echo("Matching existing username!<br>");
-if(AccountManager::usernameAvailable("ninjaturtles")){
+if($am->usernameAvailable("ninjaturtles")){
 	echo("Free!<br><br>");
 }
 else{
 	echo("Already exists :(<br><br>");
 }
 echo("Matching nonexisting username!<br>");
-if(AccountManager::usernameAvailable("thisdoesntexist")){
+if($am->usernameAvailable("thisdoesntexist")){
 	echo("Free!<br><br>");
 }
 else{
@@ -37,28 +41,22 @@ if(isset($_POST['password'])){
 	$pass=$_POST['password'];
 	$email=$_POST['email'];
 	echo("Creating account!<br>");
-	AccountManager::createAccount(0,$username,$pass,$email);
+	$am->createAccount(0,$username,$pass,$email);
 }
 else{
 	if(isset($_POST['email'])){
 		$email=$_POST['email'];
 		echo("Resetting password!<br>");
-		LoginManager::resetPassword($email);
+		$lm->resetPassword($email);
 	}
 }
 
 if(isset($_POST['old_password'])){
 	$username=$_POST['username'];
 	$oldPass=$_POST['old_password'];
-	$newPass1=$_POST['new_password1'];
-	$newPass2=$_POST['new_password2'];
-	if($newPass1==$newPass2){
-		echo("Changing password!<br>");
-		AccountManager::changePassword($username,$oldPass,$newPass1);
-	}
-	else{
-		echo("Passwords don't match!");
-	}
+	$newPass1=$_POST['new_password'];
+	echo("Changing password!<br>");
+	$am->changePassword($username,$oldPass,$newPass1);
 }
 
 
@@ -74,7 +72,7 @@ if(isset($_POST['old_password'])){
 <form action="Test.php" method="post">
 <p>Username: <br /><input type="text" name="username" /></p>
 <p>Old Password: <br /><input type="password" name="old_password" /></p>
-<p>New Password: <br /><input type="password" name="new_password1" /></p>
+<p>New Password: <br /><input type="password" name="new_password" /></p>
 <input type="submit" value="Change Password" />
 </form>
 
