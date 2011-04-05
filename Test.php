@@ -1,6 +1,7 @@
 <?php 
 
 require_once('LoginManager.php');
+require_once('AccountManager.php');
 echo("Matching correct password!<br>");
 if(LoginManager::checkPassword("ninjaturtles","p4ssw0rd")){
 	echo("Matched!<br><br>");
@@ -16,24 +17,34 @@ else{
 	echo("No dice :(<br><br>");
 }
 echo("Matching existing username!<br>");
-if(LoginManager::usernameAvailable("ninjaturtles")){
+if(AccountManager::usernameAvailable("ninjaturtles")){
 	echo("Free!<br><br>");
 }
 else{
 	echo("Already exists :(<br><br>");
 }
 echo("Matching nonexisting username!<br>");
-if(LoginManager::usernameAvailable("thisdoesntexist")){
+if(AccountManager::usernameAvailable("thisdoesntexist")){
 	echo("Free!<br><br>");
 }
 else{
 	echo("Already exists :(<br><br>");
 }
 
-if(isset($_POST['email'])){
+
+if(isset($_POST['password'])){
+	$username=$_POST['username'];
+	$pass=$_POST['password'];
 	$email=$_POST['email'];
-	echo("Resetting password!<br>");
-	LoginManager::resetPassword($email);
+	echo("Creating account!<br>");
+	AccountManager::createAccount(0,$username,$pass,$email);
+}
+else{
+	if(isset($_POST['email'])){
+		$email=$_POST['email'];
+		echo("Resetting password!<br>");
+		LoginManager::resetPassword($email);
+	}
 }
 
 if(isset($_POST['old_password'])){
@@ -43,7 +54,7 @@ if(isset($_POST['old_password'])){
 	$newPass2=$_POST['new_password2'];
 	if($newPass1==$newPass2){
 		echo("Changing password!<br>");
-		LoginManager::changePassword($username,$oldPass,$newPass1);
+		AccountManager::changePassword($username,$oldPass,$newPass1);
 	}
 	else{
 		echo("Passwords don't match!");
@@ -64,6 +75,12 @@ if(isset($_POST['old_password'])){
 <p>Username: <br /><input type="text" name="username" /></p>
 <p>Old Password: <br /><input type="password" name="old_password" /></p>
 <p>New Password: <br /><input type="password" name="new_password1" /></p>
-<p>Confirm: <br /> <input type="password" name="new_password2" /></p>
 <input type="submit" value="Change Password" />
+</form>
+
+<form action="Test.php" method="post">
+<p>Username: <br /> <input type="text" name="username" /></p>
+<p>Password: <br /> <input type="password" name="password" /></p>
+<p>Email Address: <br /> <input type="text" name="email" /></p>
+<input type="submit" value="Register" />
 </form>

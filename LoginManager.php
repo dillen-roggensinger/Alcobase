@@ -6,11 +6,11 @@ class LoginManager{
 	 */
 	function checkPassword($username,$password){
 		require_once("Validator.php");
-		if(!Validator::validUsername($username)){
+		if(!Validator::validUsername($username)){	//Check to see if it is valid
 			echo("<p>Invalid username!<p>");
 			return false;
 		}
-		if(!Validator::validPassword($password)){
+		if(!Validator::validPassword($password)){	//Check to see if it is valid
 			echo("<p>Invalid password!<p>");
 			return false;
 		}
@@ -44,7 +44,7 @@ class LoginManager{
 	 */
 	function resetPassword($email){
 		require_once("Validator.php");
-		if(!Validator::validEmail($email)){
+		if(!Validator::validEmail($email)){	//Check to see if it is valid
 			echo("<p>Invalid email!<p>");
 			return false;
 		}
@@ -75,6 +75,9 @@ class LoginManager{
 		$stid = oci_parse($conn, $query);
 		$err = oci_execute($stid);
 		
+		// subject
+		$subject = "Reset for " . $username;
+		
 		// message
 		$body = '
 		<html>
@@ -91,16 +94,14 @@ class LoginManager{
 		';
 		
 		require_once("LoginManager.php");
-		LoginManager::emailUser($email, $username,$body);
+		LoginManager::emailUser($email, $username, $subject, $body);
+		return true;
 	}
 	
 	/**Email a user with their reset password
 	 * 
 	 */
-	function emailUser($email, $username, $body) {
-		// subject
-		$subject = "Change Password for " . $username;
-
+	function emailUser($email, $username, $subject,$body) {
 		$headers = 'MIME-Version: 1.0' . "\r\n";
 		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 		// Additional headers
