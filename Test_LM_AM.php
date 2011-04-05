@@ -62,21 +62,21 @@ if(isset($_POST['old_password'])){
 
 ?>
 
-<form action="Test.php" method="post">
+<form action="Test_LM_AM.php" method="post">
 <p>Please type your email address <input type="text" name="email" /></p>
 <input type="submit" value="Reset Password" />
 </form>
 
 <br><br><br><br>
 
-<form action="Test.php" method="post">
+<form action="Test_LM_AM.php" method="post">
 <p>Username: <br /><input type="text" name="username" /></p>
 <p>Old Password: <br /><input type="password" name="old_password" /></p>
 <p>New Password: <br /><input type="password" name="new_password" /></p>
 <input type="submit" value="Change Password" />
 </form>
 
-<form action="Test.php" method="post">
+<form action="Test_LM_AM.php" method="post">
 <p>Username: <br /> <input type="text" name="username" /></p>
 <p>Password: <br /> <input type="password" name="password" /></p>
 <p>Email Address: <br /> <input type="text" name="email" /></p>

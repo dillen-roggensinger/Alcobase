@@ -11,17 +11,17 @@ class Inputer{
 			echo("Invalid input!");
 			return false;
 		}
-		require_once("Validator");
+		require_once("Validator.php");
 		$val=new Validator();
-		if(!$val->valid($input['name'],1,100)){
+		if($input['name']=="null" || !$val->valid($input['name'],1,100)){	//Can't be null
 			echo("Invalid name!<br>");
 			return false;
 		}
-		if(!$val->valid($input['drink'],1,10)){
+		if($input['drink']=="null" && !$val->valid($input['drink'],1,10)){	//Can't be null
 			echo("Invalid drink!<br>");
 			return false;
 		}
-		if(!is_numeric($input['volume'])){
+		if($input['volume']!="null" && !is_numeric($input['volume'])){
 			echo("Invalid volume!<br>");
 			return false;
 		}
@@ -29,11 +29,11 @@ class Inputer{
 			echo("Invalid brand!<br>");
 			return false;
 		}
-		if(!is_numeric($input['did'])){
+		if($input['did']=="null" || !is_numeric($input['did'])){	//Can't be null
 			echo("Invalid did!<br>");
 			return false;
 		}
-		if(!is_numeric($input['alcohol_content'])){
+		if($input['alcohol_content']!="null" && !is_numeric($input['alcohol_content'])){
 			echo("Invalid alcohol_content!<br>");
 			return false;
 		}
@@ -41,7 +41,7 @@ class Inputer{
 			echo("Invalid country!<br>");
 			return false;
 		}
-		if(!is_numeric($input['calories'])){
+		if($input['calories']!="null" && !is_numeric($input['calories'])){
 			echo("Invalid calories!<br>");
 			return false;
 		}
@@ -49,7 +49,7 @@ class Inputer{
 			echo("Invalid type!<br>");
 			return false;
 		}
-		if(!is_numeric($input['year'])){
+		if($input['year']!="null" && !is_numeric($input['year'])){
 			echo("Invalid year!<br>");
 			return false;
 		}
@@ -57,7 +57,7 @@ class Inputer{
 			echo("Invalid flavor!<br>");
 			return false;
 		}
-		if(!is_numeric($input['rating'])){
+		if($input['rating']!="null" && !is_numeric($input['rating'])){
 			echo("Invalid rating!<br>");
 			return false;
 		}
@@ -73,7 +73,7 @@ class Inputer{
 		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
 
 		if(isset($row[0])){
-			echo("Alcohol already exists!");
+			echo("Alcohol already exists!<br>");
 			return false;
 		}
 		
@@ -98,13 +98,13 @@ class Inputer{
 			return false;
 		}
 		
-		require_once("Validator");
+		require_once("Validator.php");
 		$val=new Validator();
-		if(!$val->valid($input['location'],1,200)){
+		if($input['location']=="null" || !$val->valid($input['location'],1,200)){	//Can't be null
 			echo("Invalid location!<br>");
 			return false;
 		}
-		if(!$val->valid($input['store_name'],1,100)){
+		if($input['store_name']=="null" || !$val->valid($input['store_name'],1,100)){
 			echo("Invalid store_name!<br>");
 			return false;
 		}
@@ -116,15 +116,15 @@ class Inputer{
 			echo("Invalid store_type!<br>");
 			return false;
 		}
-		if(!is_numeric($input['did'])){
+		if($input['did']=="null" || !is_numeric($input['did'])){	//Can't be null
 			echo("Invalid did!<br>");
 			return false;
 		}
-		if(!is_numeric($input['quantity'])){
+		if($input['quantity']=="null" || !is_numeric($input['quantity'])){	//Can't be null
 			echo("Invalid quantity!<br>");
 			return false;
 		}
-		if(!is_numeric($input['price'])){
+		if($input['price']=="null" || !is_numeric($input['price'])){	//Can't be null
 			echo("Invalid price!<br>");
 			return false;
 		}
@@ -141,7 +141,7 @@ class Inputer{
 		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
 
 		if(isset($row[0])){
-			echo("sold_at entry already exists!");
+			echo("sold_at entry already exists!<br>");
 			return false;
 		}
 		
@@ -165,13 +165,13 @@ class Inputer{
 			return false;
 		}
 		
-		require_once("Validator");
+		require_once("Validator.php");
 		$val=new Validator();
-		if(!$val->validUsername($input['username'])){
+		if($input['username']=="null" || !$val->validUsername($input['username'])){	//Can't be null
 			echo("Invalid username!<br>");
 			return false;
 		}
-		if(!is_numeric($input['did'])){
+		if($input['did']=="null" || !is_numeric($input['did'])){	//Can't be null
 			echo("Invalid did!<br>");
 			return false;
 		}
@@ -187,7 +187,7 @@ class Inputer{
 		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
 
 		if(isset($row[0])){
-			echo("favorite entry already exists!");
+			echo("favorite entry already exists!<br>");
 			return false;
 		}
 		
@@ -204,23 +204,22 @@ class Inputer{
 	 * (username, did, quantity)
 	 */
 	function insertBought($input){
-		echo("Starting bought insert!<br>");
 		if(count($input)!=3){
 			echo("Invalid input!");
 			return false;
 		}
 		
-		require_once("Validator");
+		require_once("Validator.php");
 		$val=new Validator();
-		if(!$val->validUsername($input['username'])){
+		if($input['username']=="null" || !$val->validUsername($input['username'])){	//Can't be null
 			echo("Invalid username!<br>");
 			return false;
 		}
-		if(!is_numeric($input['did'])){
+		if($input['did']=="null" || !is_numeric($input['did'])){	//Can't be null
 			echo("Invalid did!<br>");
 			return false;
 		}
-		if(!is_numeric($input['quantity'])){
+		if($input['quantity']=="null" || !is_numeric($input['quantity'])){	//Can't be null
 			echo("Invalid quantity!<br>");
 			return false;
 		}
@@ -236,7 +235,7 @@ class Inputer{
 		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
 
 		if(isset($row[0])){
-			echo("bought entry already exists!");
+			echo("bought entry already exists!<br>");
 			return false;
 		}
 		
@@ -260,10 +259,18 @@ class Inputer{
 			return false;
 		}
 		
-		require_once("Validator");
+		require_once("Validator.php");
 		$val=new Validator();
-		if(!$val->validUsername($input['username'])){
+		if($input['text']=="null" || !$val->valid($input['text'],1,1000)){	//Can't be null
+			echo("Invalid text!<br>");
+			return false;
+		}
+		if($input['username']=="null" || !$val->validUsername($input['username'])){	//Can't be null
 			echo("Invalid username!<br>");
+			return false;
+		}
+		if($input['did']=="null" || !is_numeric($input['did'])){	//Can't be null
+			echo("Invalid quantity!<br>");
 			return false;
 		}
 		
@@ -278,7 +285,7 @@ class Inputer{
 		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
 
 		if(isset($row[0])){
-			echo("bought entry already exists!");
+			echo("bought entry already exists!<br>");
 			return false;
 		}
 		
