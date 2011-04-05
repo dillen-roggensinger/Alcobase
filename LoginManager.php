@@ -82,7 +82,7 @@ class LoginManager{
 		$body = '
 		<html>
 		<head>
-		<title>Change Password for your Alcobase Account</title>
+		<title>Reset Password for your Alcobase Account</title>
 		</head>
 		<body>
 		<p>Hi! You have requested a password reset for this account.</p>
