@@ -48,7 +48,7 @@ h3{
 h4{
 	color:#B80000;
 	font-weight:normal;
-	font-szie:14px;
+	font-size:14px;
 }
 
 h5{
@@ -57,13 +57,13 @@ h5{
 
 .header{
 	font-size: 32px;
-	font-style: bold;
+	font-weight: bold;
 	color: #FFFFFF;
 }
 
 .topic{
 	font-size: 18px;
-	font-style: bold;
+	font-weight: bold;
 }
 
 table{

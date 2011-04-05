@@ -7,7 +7,7 @@ $hf->header();
 
 <table align="center">
 	<tr>
-		<td colspan="2"><h2>Search</h2></a></td>
+		<td colspan="2"><h2>Search</h2></td>
 	</tr>
 	<tr>
 		<td><input type="text" name="search"></td>

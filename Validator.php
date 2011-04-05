@@ -93,7 +93,7 @@ class Validator{
 	/*Validate the text.
 	 * The text must be between the input length limits and only contain alphanumerics.
 	 */
-	function valid($text,$lowerLimit,$upperLimit,){
+	function valid($text,$lowerLimit,$upperLimit){
 		if(strlen($text)>$lowerLimit && strlen($text)<=$upperLimit){
 			$test = filter_var($password, FILTER_VALIDATE_REGEXP,array('options'=>array('regexp'=>'/^\w+$/')));
 			if(isset($test)){

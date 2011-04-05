@@ -5,7 +5,7 @@ $hf = new HeaderFooter();
 $hf->header();
 ?>
 
-<form action="Scripts/signup.php" method="POST">
+<form action="signupcheck.php" method="POST">
 <table align="center">
 	<tr>
 		<td colspan="2"><h2>Sign Up</h2></td>
@@ -20,7 +20,7 @@ $hf->header();
 	</tr>
 	<tr>
 		<td><p>Username:</p></td>
-		<td><input type="text" name="uname"></td>
+		<td><input type="text" name="id"></td>
 	</tr>
 	<tr>
 		<td><p>Password:</p></td>

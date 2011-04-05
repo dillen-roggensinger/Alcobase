@@ -7,7 +7,10 @@ $hf->header();
 
 <table align="center">
 	<tr>
-		<td><h3>Welcome to Alcobase, the one stop source for all your college essentials!</h3></a></td>
+		<td><h3>Welcome to Alcobase, the one stop source for all your college essentials!</h3></td>
+	</tr>
+	<tr>
+		<td><h3>Featured Essentials:</h3></td>
 	</tr>
 </table>
 

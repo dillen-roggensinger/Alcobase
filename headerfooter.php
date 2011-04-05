@@ -9,11 +9,10 @@ class HeaderFooter{
 			<div id='header'>\n
 			<h1><a href='index.php'>ALCOBASE</a></h1>\n
 			<h3><a href='login.php'>Login</a>&nbsp;&nbsp;&nbsp;
-			<a href='account.php'>Account Page</a>&nbsp;&nbsp;&nbsp;
+			<a href='account.php'>Account</a>&nbsp;&nbsp;&nbsp;
 			<a href='browse.php'>Browse</a>&nbsp;&nbsp;&nbsp;
 			<a href='search.php'>Search</a>&nbsp;&nbsp;&nbsp;
 			<a href='signup.php'>Sign Up</a>&nbsp;&nbsp;&nbsp;
-			<a href='passc.php'>Change Password</a>&nbsp;&nbsp;&nbsp;
 			<a href='passr.php'>Reset Password</a></h3>
 			</div>\n
 			<div id='contents'>\n

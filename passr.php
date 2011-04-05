@@ -15,7 +15,7 @@ $hf->header();
 		<td><input type="text" name="email"></td>
 	</tr>
 </table>
-<p align="center"><input type="submit" value="Submit"></p>
+<p align="center"><input type="submit" value=""></p>
 
 </form>
 <?php 
