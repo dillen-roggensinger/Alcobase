@@ -24,12 +24,14 @@ class LoginManager{
 		$stid = oci_parse($conn, $query);
 		$err=oci_execute($stid);
 		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
-
+		
+		echo("Password: ".$password."<br>MD5Password: ".md5($password)."<br>System password: ".$row[0]."<br>");
+		
 		if(!isset($row[0])){
 			echo("<p>Username does not exist!<p>");
 			return false;
 		}
-		else if($row[0]==$password){
+		else if($row[0]==md5($password)){
 			return true;
 		}
 		else{

@@ -7,7 +7,7 @@ echo("Matching correct password!<br>");
 $lm=new LoginManager();
 $am=new AccountManager();
 
-if($lm->checkPassword("ninjaturtles","p4ssw0rd")){
+if($lm->checkPassword("Badoofer108","getonmylevel")){
 	echo("Matched!<br><br>");
 }
 else{
