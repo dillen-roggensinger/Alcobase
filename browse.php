@@ -7,7 +7,7 @@ $hf->header();
 
 <table align="center">
 	<tr>
-		<td colspan="10"><h2>Browse</h2></td>
+		<td colspan="11"><h2>Browse</h2></td>
 	</tr>
 	<tr>
 		<td>&uarr; Name &darr;</td>
@@ -16,10 +16,11 @@ $hf->header();
 		<td>&uarr; Brand &darr;</td>
 		<td>&uarr; Alcohol Content &darr;</td>
 		<td>&uarr; Country &darr;</td>
-		<td>&uarr; Store Name &darr;</td>
-		<td>&uarr; Store Type &darr;</td>
 		<td>&uarr; Quantity &darr;</td>
 		<td>&uarr; Price &darr;</td>
+		<td>&uarr; Store Name &darr;</td>
+		<td>&uarr; Store Type &darr;</td>
+		<td>&uarr; Zip Code &darr;</td>
 	</tr>
 </table>
 
