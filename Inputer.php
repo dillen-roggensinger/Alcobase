@@ -11,6 +11,56 @@ class Inputer{
 			echo("Invalid input!");
 			return false;
 		}
+		require_once("Validator");
+		$val=new Validator();
+		if(!$val->valid($input['name'],1,100)){
+			echo("Invalid name!<br>");
+			return false;
+		}
+		if(!$val->valid($input['drink'],1,10)){
+			echo("Invalid drink!<br>");
+			return false;
+		}
+		if(!is_numeric($input['volume'])){
+			echo("Invalid volume!<br>");
+			return false;
+		}
+		if(!$val->valid($input['brand'],1,100)){
+			echo("Invalid brand!<br>");
+			return false;
+		}
+		if(!is_numeric($input['did'])){
+			echo("Invalid did!<br>");
+			return false;
+		}
+		if(!is_numeric($input['alcohol_content'])){
+			echo("Invalid alcohol_content!<br>");
+			return false;
+		}
+		if(!$val->valid($input['country'],1,100)){
+			echo("Invalid country!<br>");
+			return false;
+		}
+		if(!is_numeric($input['calories'])){
+			echo("Invalid calories!<br>");
+			return false;
+		}
+		if(!$val->valid($input['type'],1,100)){
+			echo("Invalid type!<br>");
+			return false;
+		}
+		if(!is_numeric($input['year'])){
+			echo("Invalid year!<br>");
+			return false;
+		}
+		if(!$val->valid($input['flavor'],1,100)){
+			echo("Invalid flavor!<br>");
+			return false;
+		}
+		if(!is_numeric($input['rating'])){
+			echo("Invalid rating!<br>");
+			return false;
+		}
 		
 		$query="
 		SELECT a.did
@@ -47,6 +97,38 @@ class Inputer{
 			echo("Invalid input!");
 			return false;
 		}
+		
+		require_once("Validator");
+		$val=new Validator();
+		if(!$val->valid($input['location'],1,200)){
+			echo("Invalid location!<br>");
+			return false;
+		}
+		if(!$val->valid($input['store_name'],1,100)){
+			echo("Invalid store_name!<br>");
+			return false;
+		}
+		if(!$val->valid($input['store_hours'],1,200)){
+			echo("Invalid store_hours!<br>");
+			return false;
+		}
+		if(!$val->valid($input['store_type'],1,100)){
+			echo("Invalid store_type!<br>");
+			return false;
+		}
+		if(!is_numeric($input['did'])){
+			echo("Invalid did!<br>");
+			return false;
+		}
+		if(!is_numeric($input['quantity'])){
+			echo("Invalid quantity!<br>");
+			return false;
+		}
+		if(!is_numeric($input['price'])){
+			echo("Invalid price!<br>");
+			return false;
+		}
+		
 		$query="
 		SELECT s.did
 		FROM sold_at s
@@ -82,6 +164,18 @@ class Inputer{
 			echo("Invalid input!");
 			return false;
 		}
+		
+		require_once("Validator");
+		$val=new Validator();
+		if(!$val->validUsername($input['username'])){
+			echo("Invalid username!<br>");
+			return false;
+		}
+		if(!is_numeric($input['did'])){
+			echo("Invalid did!<br>");
+			return false;
+		}
+		
 		$query="
 		SELECT f.did
 		FROM favorite f
@@ -115,6 +209,22 @@ class Inputer{
 			echo("Invalid input!");
 			return false;
 		}
+		
+		require_once("Validator");
+		$val=new Validator();
+		if(!$val->validUsername($input['username'])){
+			echo("Invalid username!<br>");
+			return false;
+		}
+		if(!is_numeric($input['did'])){
+			echo("Invalid did!<br>");
+			return false;
+		}
+		if(!is_numeric($input['quantity'])){
+			echo("Invalid quantity!<br>");
+			return false;
+		}
+		
 		$query="
 		SELECT b.did
 		FROM bought b
@@ -149,6 +259,14 @@ class Inputer{
 			echo("Invalid input!");
 			return false;
 		}
+		
+		require_once("Validator");
+		$val=new Validator();
+		if(!$val->validUsername($input['username'])){
+			echo("Invalid username!<br>");
+			return false;
+		}
+		
 		$query="
 		SELECT wc.did
 		FROM write_comment wc

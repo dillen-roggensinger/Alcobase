@@ -8,11 +8,9 @@ class LoginManager{
 		require_once("Validator.php");
 		$val=new Validator();
 		if(!$val->validUsername($username)){	//Check to see if it is valid
-			echo("<p>Invalid username!<p>");
 			return false;
 		}
 		if(!$val->validPassword($password)){	//Check to see if it is valid
-			echo("<p>Invalid password!<p>");
 			return false;
 		}
 		$query="
@@ -26,7 +24,6 @@ class LoginManager{
 		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
 		
 		if(!isset($row[0])){
-			echo("<p>Username does not exist!<p>");
 			return false;
 		}
 		else if($row[0]==md5($password)){
@@ -45,7 +42,6 @@ class LoginManager{
 		require_once("Validator.php");
 		$val=new Validator();
 		if(!$val->validEmail($email)){	//Check to see if it is valid
-			echo("<p>Invalid email!<p>");
 			return false;
 		}
 		$query="
@@ -59,7 +55,6 @@ class LoginManager{
 		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
 
 		if(!isset($row[0])){
-			echo("<p>Not a registered email!<p>");
 			return false;
 		}
 		

@@ -66,6 +66,9 @@ class Validator{
 	 * numbers are allowed.
 	 */
 	function validUsername($username){
+		if(!isset($username)){
+			return false;
+		}
 		if(strlen($username)>=8 && strlen($username)<=32){
 			$test = filter_var($username, FILTER_VALIDATE_REGEXP,array('options'=>array('regexp'=>'/^[a-zA-Z]\w*$/')));
 			if (isset($test)){
@@ -81,6 +84,9 @@ class Validator{
 	 * numbers are allowed.
 	 */
 	function validPassword($password){
+		if(!isset($password)){
+			return false;
+		}
 		if(strlen($password)>=8 && strlen($password)<=32){
 			$test = filter_var($password, FILTER_VALIDATE_REGEXP,array('options'=>array('regexp'=>'/^(\w*[a-zA-Z]\w*[0-9]\w*)|(\w*[0-9]\w*[a-zA-Z]\w*)$/')));
 			if (isset($test)){
@@ -93,15 +99,19 @@ class Validator{
 	/*Validate the text.
 	 * The text must be between the input length limits and only contain alphanumerics.
 	 */
-	function valid($text,$lowerLimit,$upperLimit,){
-		if(strlen($text)>$lowerLimit && strlen($text)<=$upperLimit){
-			$test = filter_var($password, FILTER_VALIDATE_REGEXP,array('options'=>array('regexp'=>'/^\w+$/')));
+	function valid($text,$lowerLimit,$upperLimit){
+		if(!isset($text)){
+			return false;
+		}
+		if(strlen($text)>=$lowerLimit && strlen($text)<=$upperLimit){
+			$test = filter_var($text, FILTER_VALIDATE_REGEXP,array('options'=>array('regexp'=>'/;|&/')));
 			if(isset($test)){
-				return $test;
+				return !$test;
 			}
 			return false;
 		}
 	}
+	
 }
 
 

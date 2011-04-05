@@ -61,7 +61,6 @@ class AccountManager{
 		require_once("Validator.php");
 		$val=new Validator();
 		if(!$val->validUsername($username)){	//Checks that it is valid
-			echo("<p>Invalid username!<p>");
 			return false;
 		}
 		$query="
@@ -89,7 +88,6 @@ class AccountManager{
 		require_once("Validator.php");
 		$lm=new LoginManager();
 		if(!$lm->validEmail($email)){	//Checks that it is valid
-			echo("<p>Invalid email!<p>");
 			return false;
 		}
 		$query="
@@ -117,15 +115,12 @@ class AccountManager{
 		require_once("Validator.php");
 		$val=new Validator();
 		if(!$val->validUsername($username)){	//Checks to see if it is valid
-			echo("<p>Invalid username!<p>");
 			return false;
 		}
 		if(!$val->validPassword($oldPass)){	//Checks to see if it is valid
-			echo("<p>Invalid old password!<p>");
 			return false;
 		}
 		if(!$val->validPassword($newPass)){	//Checks to see if it is valid
-			echo("<p>Invalid new password!<p>");
 			return false;
 		}
 		$query="
@@ -139,7 +134,6 @@ class AccountManager{
 		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
 
 		if(!isset($row[0])){
-			echo("<p>Username and password do not match!<p>");
 			return false;
 		}
 		
