@@ -192,7 +192,6 @@ class AccountManager{
 		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
 		
 		if(!isset($row)){
-			echo("Username doesn't exist!");
 			return false;
 		}
 		if($row[0]==1){

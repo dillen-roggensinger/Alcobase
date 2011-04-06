@@ -21,8 +21,8 @@
 					//check email for validity
 					if($val->validEmail($email)){
 						//check email for duplicate
-						if(true/*$am->emailAvailable($email)*/){
-							//$am->createAccount(0, $id, $pass, $email);
+						if($am->emailAvailable($email)){
+							$am->createAccount(1, $id, $pass, $email);
 							header('Location: login.php');
 						}
 						else{
@@ -33,7 +33,7 @@
 									<td><h2>Email Taken!</h2></td>
 								</tr>
 								<tr>
-									<td><a href='signup.php'>Try again</a> with another email</td>
+									<td><a href='signup.php'>Try again</a> with another email.</td>
 								</tr>
 							</table>";
 						}

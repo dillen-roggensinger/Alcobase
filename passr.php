@@ -5,7 +5,7 @@ $hf = new HeaderFooter();
 $hf->header();
 ?>
 
-<form action="Scripts/login.php" method="POST">
+<form action="reset.php" method="POST">
 <table align="center">
 	<tr>
 		<td colspan="2"><h2>Reset Password</h2></td>
@@ -14,8 +14,10 @@ $hf->header();
 		<td>Email:</td>
 		<td><input type="text" name="email"></td>
 	</tr>
+	<tr>
+		<td colspan='2'><input type="submit" value="Reset Password"></td>
+	</tr>
 </table>
-<p align="center"><input type="submit" value="Reset Password"></p>
 
 </form>
 <?php 

@@ -7,7 +7,7 @@ $hf->header();
 
 echo "<table align='center'>
 		<tr>
-			<td colspan='12'><h2>Browse</h2></td>
+			<td colspan='12'><h2>Results</h2></td>
 		</tr>
 		<tr>
 			<td>&uarr; Name &darr;</td>

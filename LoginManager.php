@@ -102,10 +102,10 @@ class LoginManager{
 		$headers .= 'From: Alcobase' . "\r\n";
 
 		if (mail($email, $subject, $body, $headers)) {
-			echo("<p>Message successfully sent!</p>");
+			
 		}
 		else {
-			echo("<p>Message delivery failed...</p>");
+			
 		}
 	}
 

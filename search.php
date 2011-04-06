@@ -4,7 +4,7 @@ include('headerfooter.php');
 $hf = new HeaderFooter();
 $hf->header();
 ?>
-
+<form action="results.php" method="POST">
 <table align="center">
 	<tr>
 		<td colspan="2"><h2>Search</h2></td>
@@ -19,15 +19,18 @@ $hf->header();
 		<OPTION VALUE="brand">Brand</OPTION>
 		<OPTION VALUE="alcohol_content">Alcohol Content</OPTION>
 		<OPTION VALUE="countr">Country</OPTION>
+		<OPTION VALUE="rating">Rating</OPTION>
 		<OPTION VALUE="store_name">Store Name</OPTION>
 		<OPTION VALUE="store_type">Store Type</OPTION>
+		<OPTION VALUE="zip_code">Zip Code</OPTION>
+		
 		</SELECT></td>
 	</tr>
 	<tr>
 		<td colspan="2"><input type="submit" value="Search!"></td>
 	</tr>
 </table>
-
+</form>
 <?php 
 $hf->footer();
 ?>

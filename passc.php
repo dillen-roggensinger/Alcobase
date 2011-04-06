@@ -5,14 +5,14 @@ $hf = new HeaderFooter();
 $hf->header();
 ?>
 
-<form action="Scripts/login.php" method="POST">
+<form action="change.php" method="POST">
 <table align="center">
 	<tr>
 		<td colspan="2"><h2>Change Password</h2></td>
 	</tr>
 	<tr>
 		<td>Username:</td>
-		<td><input type="text" name="name"></td>
+		<td><input type="text" name="id"></td>
 	</tr>
 	<tr>
 		<td>Old Password:</td>
@@ -24,7 +24,7 @@ $hf->header();
 	</tr>
 	<tr>
 		<td>Confirm New Password:</td>
-		<td><input type="password" name="newpasscheck"></td>
+		<td><input type="password" name="newpasschk"></td>
 	</tr>
 </table>
 <p align="center"><input type="submit" value="Change!"></p>

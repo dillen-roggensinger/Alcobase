@@ -26,6 +26,20 @@ if(isset($_COOKIE['user'])){
 			<tr>
 				<td colspan='4' align='right'><a href='passc.php'>Change Password</a></td>
 			</tr>";
+	if($am->isAdmin($user)){
+		echo "<tr>
+				<td colspan='4' align='right'><a href='add.php'>Add to database</a></td>
+			</tr>
+			<tr>
+				<td colspan='4' align='right'><a href='allalcohols.php'>View all Alcohols</a></td>
+			</tr>
+			<tr>
+				<td colspan='4' align='right'><a href='allsold.php'>View all Alcohols Sold</a></td>
+			</tr>";
+	}
+	echo "<tr>
+			<td colspan='4' align='right'><a href='logout.php'>Logout</a></td>
+		</tr>";
 }
 else
 	echo "<table align='center'>
@@ -33,15 +47,10 @@ else
 			<td><h2>Login Fail!</h2></td>
 		</tr>
 		<tr>
-			<td>You gots to login first!</td>
+			<td>You gots to <a href='login.php'>login</a> first!</td>
 		</tr>";
-/*
-if(isAdmin){
-	<tr>
-		<td colspan='4' align='right'><a href='add.php'>Add to Database</a></td>
-	</tr>
-}
- */
 echo "</table>";
 $hf->footer();
+
+
 ?>
