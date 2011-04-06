@@ -21,7 +21,7 @@ class Sorter{
 			}
 			
 			$query="
-			SELECT a.name, a.drink, a.volume, a.rating, a.brand, a.alcohol_content, a.country, s.quantity, s.price, s.store_name, s.store_type, s.location
+			SELECT a.name, a.drink, a.volume, a.rating, a.brand, a.alcohol_content, a.country, s.quantity, s.price, s.store_name, s.store_type, s.location, a.did
 			FROM alcohol a,sold_at s
 			WHERE a.did=s.did";
 
