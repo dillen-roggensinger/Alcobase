@@ -14,7 +14,8 @@ class Sorter{
 		}
 		if($attribute=="name" || $attribute=="drink" || $attribute=="rating" || $attribute=="brand" ||
 		$attribute=="alcohol_content" || $attribute=="country" || $attribute=="quantity" || $attribute=="price"
-		|| $attribute=="store_name"	|| $attribute=="store_type" || $attribute=="zip_code"){
+		|| $attribute=="store_name"	|| $attribute=="store_type" || $category=="volume" || $attribute=="zip_code"
+		|| $category=="did"){
 			
 			if($attribute=="zip_code"){
 				$attribute="location";
@@ -62,7 +63,7 @@ class Sorter{
 		if($category=="name" || $category=="drink" || $category=="brand" || $category=="country"
 		|| $category=="store_name"	|| $category=="store_type" || $category=="rating"
 		|| $category=="alcohol_content" || $category=="quantity" || $category=="price"
-		|| $category=="zip_code" || $category=="volume"){
+		|| $category=="zip_code" || $category=="volume" || $category=="did"){
 
 			require_once("Validator.php");
 			$val=new Validator();
