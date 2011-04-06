@@ -73,6 +73,12 @@ table{
 	background-color: #4380D3;
 	border-spacing: 20px;
 }
+tr.d0 td {
+	background-color: #4380D3;
+}
+tr.d1 td {
+	background-color: #003366;
+}
 
 a:link {
 	text-decoration: none;

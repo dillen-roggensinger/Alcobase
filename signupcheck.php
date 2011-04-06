@@ -22,7 +22,7 @@
 					if($val->validEmail($email)){
 						//check email for duplicate
 						if($am->emailAvailable($email)){
-							$am->createAccount(1, $id, $pass, $email);
+							$am->createAccount(0, $id, $pass, $email);
 							header('Location: login.php');
 						}
 						else{

@@ -56,7 +56,7 @@
 					<td colspan='2'><input type='submit' value='Add'></td>
 				</tr>
 				<tr>
-					<td colspan='2'><h2>Add Sold At</h2></td>
+					<td colspan='2'><h2>Add Sold At Info</h2></td>
 				</tr>
 				<tr>
 					<td>Store Name</td>
@@ -92,6 +92,13 @@
 				</tr>
 				<tr>
 					<td colspan='2'><input type='submit' value='Add'></td>
+				</tr>
+				<tr>
+					<td colspan='2'><h2>Add Admin</h2></td>
+				</tr>
+				<tr>
+					<td>Username</td>
+					<td><input type='text' name='admin'></td>
 				</tr>
 			</table>
 		</form>";
