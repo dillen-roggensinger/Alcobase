@@ -46,7 +46,7 @@ else{
 echo("<br>");
 
 echo("Testing if nonadmin is an admin!<br>");
-if($am->isAdmin("BruceWillis")){
+if($am->isAdmin("imanadmin")){
 	echo("Admin!<br>");
 }
 else{
