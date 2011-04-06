@@ -11,14 +11,6 @@ $hf->header();
 		<td colspan="2"><h2>Sign Up</h2></td>
 	</tr>
 	<tr>
-		<td><p>First Name:</p></td>
-		<td><input type="text" name="fname"></td>
-	</tr>
-	<tr>
-		<td><p>Last Name:</p></td>
-		<td><input type="text" name="lname"></td>
-	</tr>
-	<tr>
 		<td><p>Username:</p></td>
 		<td><input type="text" name="id"></td>
 	</tr>
@@ -27,7 +19,7 @@ $hf->header();
 		<td><input type="password" name="pass"></td>
 	</tr>
 	<tr>
-		<td><p>Re-Enter Password:</p></td>
+		<td><p>Confirm Password:</p></td>
 		<td><input type="password" name="passchk"></td>
 	</tr>
 	<tr>

@@ -23,6 +23,9 @@ $hf->header();
 		<OPTION VALUE="store_type">Store Type</OPTION>
 		</SELECT></td>
 	</tr>
+	<tr>
+		<td colspan="2"><input type="submit" value="Search!"></td>
+	</tr>
 </table>
 
 <?php 
