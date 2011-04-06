@@ -35,6 +35,24 @@ else{
 	echo("Already exists :(<br><br>");
 }
 
+echo("Testing if admin is an admin!<br>");
+if($am->isAdmin("sexytime")){
+	echo("Admin!<br>");
+}
+else{
+	echo("Not admin!<br>");
+}
+
+echo("<br>");
+
+echo("Testing if nonadmin is an admin!<br>");
+if($am->isAdmin("BruceWillis")){
+	echo("Admin!<br>");
+}
+else{
+	echo("Not admin!<br>");
+}
+
 
 if(isset($_POST['password'])){
 	$username=$_POST['username'];

@@ -173,6 +173,35 @@ class AccountManager{
 		$lm->emailUser($email, $username, $subject, $body);
 		return true;
 	}
+	
+	function isAdmin($username){
+		require_once("Validator.php");
+		$val=new Validator();
+		if(!$val->validUsername($username)){
+			return false;
+		}
+		
+		$query="
+		SELECT a.admin
+		FROM account a
+		WHERE a.username='" . $username . "'";
+
+		$conn = oci_connect("der2127", "c00kie5", "w4111c.cs.columbia.edu:1521/adb");
+		$stid = oci_parse($conn, $query);
+		$err=oci_execute($stid);
+		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
+		
+		if(!isset($row)){
+			echo("Username doesn't exist!");
+			return false;
+		}
+		if($row[0]==1){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
 }
 
 ?>
