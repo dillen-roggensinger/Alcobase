@@ -11,6 +11,16 @@ if(isset($array)){
 		echo("<br>Next row<br>");
 	}
 }
-echo("Success!");
+echo("Successful Browse!<br>");
 
+$array2=$sorter->searchData("zip_code","10025");
+if(isset($array2)){
+	foreach($array2 as $r){
+		foreach($r as $c){
+			echo($c."  ,  ");
+		}
+		echo("<br>Next row<br>");
+	}
+}
+echo("Successful Search!");
 ?>
