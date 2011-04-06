@@ -29,12 +29,6 @@ if(isset($_COOKIE['user'])){
 	if($am->isAdmin($user)){
 		echo "<tr>
 				<td colspan='4' align='right'><a href='add.php'>Add to database</a></td>
-			</tr>
-			<tr>
-				<td colspan='4' align='right'><a href='allalcohols.php'>View all Alcohols</a></td>
-			</tr>
-			<tr>
-				<td colspan='4' align='right'><a href='allsold.php'>View all Alcohols Sold</a></td>
 			</tr>";
 	}
 	echo "<tr>

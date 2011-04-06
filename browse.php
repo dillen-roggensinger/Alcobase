@@ -1,30 +1,57 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
 <?php
-include('headerfooter.php'); 
+include('headerfooter.php');
+include('AccountManager.php'); 
+include('Sorter.php');
 $hf = new HeaderFooter();
+$am = new AccountManager();
+$s = new Sorter;
 $hf->header();
 
+$length = 12;
+if(isset($_COOKIE['user'])){
+	$user = $_COOKIE['user'];
+	if($am->isAdmin($user))
+		$length = 13;
+}
 
 echo "<table align='center'>
 		<tr>
-			<td colspan='12'><h2>Browse</h2></td>
+			<td colspan='".$length."'><h2>Browse</h2></td>
 		</tr>
 		<tr>
-			<td>&uarr; Name &darr;</td>
-			<td>&uarr; Drink &darr;</td>
-			<td>&uarr; Volume &darr;</td>
-			<td>&uarr; Brand &darr;</td>
-			<td>&uarr; Alcohol Content &darr;</td>
-			<td>&uarr; Country &darr;</td>
-			<td>&uarr; Quantity &darr;</td>
-			<td>&uarr; Price &darr;</td>
-			<td>&uarr; Rating &darr;</td>
-			<td>&uarr; Store Name &darr;</td>
-			<td>&uarr; Store Type &darr;</td>
-			<td>&uarr; Zip Code &darr;</td>
-		</tr>
-	</table>";
-
-
+			<td><b>&uarr; Name &darr;</b></td>
+			<td><b>&uarr; Drink &darr;</b></td>
+			<td><b>&uarr; Volume &darr;</b></td>
+			<td><b>&uarr; Rating &darr;</b></td>
+			<td><b>&uarr; Brand &darr;</b></td>
+			<td><b>&uarr; Alcohol Content &darr;</b></td>
+			<td><b>&uarr; Country &darr;</b></td>
+			<td><b>&uarr; Quantity &darr;</b></td>
+			<td><b>&uarr; Price &darr;</b></td>
+			<td><b>&uarr; Store Name &darr;</b></td>
+			<td><b>&uarr; Store Type &darr;</b></td>
+			<td><b>&uarr; Zip Code &darr;</b></td>";
+if(isset($_COOKIE['user'])){
+	$user = $_COOKIE['user'];
+	if($am->isAdmin($user))
+		echo "<td><b>&uarr; Did &darr;</b></td>";
+}
+			
+echo "</tr>";
+$data = $s->sortData('name', 0);
+foreach($data as $r){
+	echo "<tr>";
+	$count = 0;
+	foreach($r as $c){
+		$count++;
+		if($length<13 && $count>12){
+			break;
+		}
+		echo "<td>".$c."</td>";
+	}
+	echo "</tr>";
+}
+echo "</table>";
 $hf->footer();
 ?>
