@@ -29,7 +29,9 @@ class AccountManager{
 		$conn = oci_connect("der2127", "c00kie5", "w4111c.cs.columbia.edu:1521/adb");
 		$stid = oci_parse($conn, $query);
 		$err=oci_execute($stid);
-				
+		
+		oci_close($conn);
+		
 		// subject
 		$subject = "Registration for " . $username;
 		
@@ -75,7 +77,9 @@ class AccountManager{
 		$stid = oci_parse($conn, $query);
 		$err=oci_execute($stid);
 		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
-
+		
+		oci_close($conn);
+		
 		if($row[0]!=$username){
 			return true;
 		}
@@ -102,7 +106,9 @@ class AccountManager{
 		$stid = oci_parse($conn, $query);
 		$err=oci_execute($stid);
 		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
-
+		
+		oci_close($conn);
+		
 		if($row[0]!=$email){
 			return true;
 		}
@@ -135,7 +141,9 @@ class AccountManager{
 		$stid = oci_parse($conn, $query);
 		$err=oci_execute($stid);
 		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
-
+		
+		oci_close($conn);
+		
 		if(!isset($row[0])){
 			return false;
 		}
@@ -190,6 +198,8 @@ class AccountManager{
 		$stid = oci_parse($conn, $query);
 		$err=oci_execute($stid);
 		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
+		
+		oci_close($conn);
 		
 		if(!isset($row)){
 			return false;

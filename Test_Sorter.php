@@ -2,25 +2,28 @@
 
 require_once("Sorter.php");
 $sorter=new Sorter();
-$array=$sorter->sortData("zip_code",0);
+
+echo("<strong>Sorting by 'name' by '0' (decending order):</strong><br><br>");
+$array=$sorter->sortData("name",0);
 if(isset($array)){
 	foreach($array as $r){
 		foreach($r as $c){
 			echo($c."  ,  ");
 		}
-		echo("<br>Next row<br>");
+		echo("<br><br>");
 	}
 }
-echo("Successful Browse!<br>");
+echo("<strong>Successful Browse!</strong><br>");
 
-$array2=$sorter->searchData("zip_code","10025");
+echo("<br><br><br><strong>Searching through 'name' for 'Bass':</strong><br><br>");
+$array2=$sorter->searchData("name","Bass");
 if(isset($array2)){
 	foreach($array2 as $r){
 		foreach($r as $c){
 			echo($c."  ,  ");
 		}
-		echo("<br>Next row<br>");
+		echo("<br><br>");
 	}
 }
-echo("Successful Search!");
+echo("<strong>Successful Search</strong>!");
 ?>

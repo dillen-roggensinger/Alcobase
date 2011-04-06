@@ -23,6 +23,8 @@ class LoginManager{
 		$err=oci_execute($stid);
 		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
 		
+		oci_close($conn);
+		
 		if(!isset($row[0])){
 			return false;
 		}
@@ -54,6 +56,8 @@ class LoginManager{
 		$err=oci_execute($stid);
 		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
 
+		oci_close($conn);
+		
 		if(!isset($row[0])){
 			return false;
 		}
@@ -101,12 +105,7 @@ class LoginManager{
 		// Additional headers
 		$headers .= 'From: Alcobase' . "\r\n";
 
-		if (mail($email, $subject, $body, $headers)) {
-			
-		}
-		else {
-			
-		}
+		mail($email, $subject, $body, $headers);
 	}
 
 

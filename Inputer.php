@@ -85,6 +85,8 @@ class Inputer{
 		$stid = oci_parse($conn, $query);
 		$err=oci_execute($stid);
 		
+		oci_close($conn);
+		
 		return true;
 	}
 	
@@ -152,6 +154,8 @@ class Inputer{
 		$stid = oci_parse($conn, $query);
 		$err=oci_execute($stid);
 		
+		oci_close($conn);
+		
 		return true;
 	}
 	
@@ -195,6 +199,8 @@ class Inputer{
 		$conn = oci_connect("der2127", "c00kie5", "w4111c.cs.columbia.edu:1521/adb");
 		$stid = oci_parse($conn, $query);
 		$err=oci_execute($stid);
+		
+		oci_close($conn);
 		
 		return true;
 	}
@@ -244,6 +250,8 @@ class Inputer{
 		$conn = oci_connect("der2127", "c00kie5", "w4111c.cs.columbia.edu:1521/adb");
 		$stid = oci_parse($conn, $query);
 		$err=oci_execute($stid);
+		
+		oci_close($conn);
 		
 		return true;
 	}
@@ -295,6 +303,8 @@ class Inputer{
 		$conn = oci_connect("der2127", "c00kie5", "w4111c.cs.columbia.edu:1521/adb");
 		$stid = oci_parse($conn, $query);
 		$err=oci_execute($stid);
+		
+		oci_close($conn);
 		
 		return true;
 	}
