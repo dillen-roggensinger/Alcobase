@@ -6,6 +6,9 @@ class AccountManager{
 	 * 
 	 */
 	function createAccount($admin,$username, $password, $email){
+		if(!($admin==0 || $admin==1)){
+			return false;
+		}
 		if(!$this->usernameAvailable($username)){	//Checks if it's valid and not already taken
 			echo("<p>Username already exists!<p>");
 			return false;
@@ -86,7 +89,7 @@ class AccountManager{
 	 */
 	function emailAvailable($email){
 		require_once("Validator.php");
-		$lm=new LoginManager();
+		$lm=new Validator();
 		if(!$lm->validEmail($email)){	//Checks that it is valid
 			return false;
 		}
