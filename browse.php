@@ -12,7 +12,7 @@ $hf->header();
 	<tr>
 		<td>&uarr; Name &darr;</td>
 		<td>&uarr; Drink &darr;</td>
-		<td>&uarr; Volume &darr;</td>
+		<td>&uarr; Rating &darr;</td>
 		<td>&uarr; Brand &darr;</td>
 		<td>&uarr; Alcohol Content &darr;</td>
 		<td>&uarr; Country &darr;</td>

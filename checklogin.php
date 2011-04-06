@@ -23,7 +23,7 @@
 					<td><h2>Invalid Password!</h2></td>
 				</tr>
 				<tr>
-					<td>Click 'Login' at the top of the page to try again.</td>
+					<td><a href='login.php'>Try again</a></td>
 				</tr>
 			</table>";
 			$hf->footer();
@@ -40,7 +40,7 @@
 				<td>New User? <a href='signup.php'>Sign Up</a></td>
 			</tr>
 			<tr>
-				<td>Or <a href='login.php'>Login' to try again</td>
+				<td>Or <a href='login.php'>try again</a></td>
 			</tr>
 		</table>";
 		$hf->footer();
