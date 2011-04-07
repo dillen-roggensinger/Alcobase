@@ -8,53 +8,53 @@ class Inputer{
 	 */
 	function insertAlcohol($input){
 		if(count($input)!=11){
-			echo("Invalid input!");
+			//echo("Invalid input!");
 			return false;
 		}
 		require_once("Validator.php");
 		$val=new Validator();
 		if($input['name']=="null" || !$val->valid($input['name'],1,100)){	//Can't be null
-			echo("Invalid name!<br>");
+			//echo("Invalid name!<br>");
 			return false;
 		}
 		if($input['drink']=="null" && !$val->valid($input['drink'],1,10)){	//Can't be null
-			echo("Invalid drink!<br>");
+			//echo("Invalid drink!<br>");
 			return false;
 		}
 		if($input['volume']!="null" && !is_numeric($input['volume'])){
-			echo("Invalid volume!<br>");
+			//echo("Invalid volume!<br>");
 			return false;
 		}
 		if(!$val->valid($input['brand'],1,100)){
-			echo("Invalid brand!<br>");
+			//echo("Invalid brand!<br>");
 			return false;
 		}
 		if($input['alcohol_content']!="null" && !is_numeric($input['alcohol_content'])){
-			echo("Invalid alcohol_content!<br>");
+			//echo("Invalid alcohol_content!<br>");
 			return false;
 		}
 		if(!$val->valid($input['country'],1,100)){
-			echo("Invalid country!<br>");
+			//echo("Invalid country!<br>");
 			return false;
 		}
 		if($input['calories']!="null" && !is_numeric($input['calories'])){
-			echo("Invalid calories!<br>");
+			//echo("Invalid calories!<br>");
 			return false;
 		}
 		if(!$val->valid($input['type'],1,100)){
-			echo("Invalid type!<br>");
+			//echo("Invalid type!<br>");
 			return false;
 		}
 		if($input['year']!="null" && !is_numeric($input['year'])){
-			echo("Invalid year!<br>");
+			//echo("Invalid year!<br>");
 			return false;
 		}
 		if(!$val->valid($input['flavor'],1,100)){
-			echo("Invalid flavor!<br>");
+			//echo("Invalid flavor!<br>");
 			return false;
 		}
 		if($input['rating']!="null" && !is_numeric($input['rating'])){
-			echo("Invalid rating!<br>");
+			//echo("Invalid rating!<br>");
 			return false;
 		}
 		
@@ -67,7 +67,7 @@ class Inputer{
 		
 		$did=$row['DID']+1;
 		
-		echo("Did: ".$did."<br>");
+		//echo("Did: ".$did."<br>");
 
 		$query="INSERT INTO alcohol VALUES('" . $input['name'] . "','" . $input['drink'] . "'," . $input['volume']
 			 . ",'" . $input['brand'] . "'," . $did . "," . $input['alcohol_content'] . ",'"
