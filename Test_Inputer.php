@@ -11,7 +11,7 @@ echo("Inputing favorite<br>");
 $input=array("username" => "Badoofer108","did" => 32);
 Inputer::insertFavorite($input);
 echo("Inputing bought<br>");
-$input=array("username" => "Badoofer108","did" => 32,"quantity" => 2);
+$input=array("username" => "Badoofer108","did" => 11,"quantity" => 6,"location" => "1225 Amsterdam Avenue New York NY 10027", "store_name" => "Apple Tree Supermarket","price" => 11.99);
 Inputer::insertBought($input);
 echo("Inputing write_comment<br>");
 $input=array("text" => "this comment will blow your mind!","username" => "Badoofer108","did" => 23);
