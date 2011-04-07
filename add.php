@@ -73,12 +73,8 @@
 						<td><input type='text' name='store_hours'></td>
 					</tr>
 					<tr>
-						<td>Street Address</td>
-						<td><input type='text' name='street_address'></td>
-					</tr>
-					<tr>
-						<td>Zip Code</td>
-						<td><input type='text' name='zip_code'></td>
+						<td>Location</td>
+						<td><input type='text' name='location'></td>
 					</tr>
 					<tr>
 						<td>Quantity</td>

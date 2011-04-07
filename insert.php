@@ -35,10 +35,9 @@
 		}
 	}
 	else if($_POST['store_name']!=''){
-		$inputSold = array('store_name' => $_POST['store_name'], 'store_type' => $_POST['store_type'],
-			'store_hours' => $_POST['store_hours'], 'stree_address' => $_POST['street_address'],
-			'zip_code' => $_POST['zip_code'], 'quantity' => $_POST['quantity'], 'price' => $_POST['price'],
-			'did' => $_POST['did']);
+		$inputSold = array( 'location' => $_POST['location'], 'store_name' => $_POST['store_name'],
+			'store_hours' => $_POST['store_hours'], 'store_type' => $_POST['store_type'],
+			'did' => $_POST['did'], 'quantity' => $_POST['quantity'], 'price' => $_POST['price']);
 		$result = $i->insertSold_At($inputSold);
 		if($result){
 			echo "<table align='center'>

@@ -87,38 +87,38 @@ class Inputer{
 	 */
 	function insertSold_At($input){
 		if(count($input)!=7){
-			echo("Invalid input!");
+			//echo("Invalid input!");
 			return false;
 		}
 		
 		require_once("Validator.php");
 		$val=new Validator();
 		if($input['location']=="null" || !$val->valid($input['location'],1,200)){	//Can't be null
-			echo("Invalid location!<br>");
+			//echo("Invalid location!<br>");
 			return false;
 		}
 		if($input['store_name']=="null" || !$val->valid($input['store_name'],1,100)){
-			echo("Invalid store_name!<br>");
+			//echo("Invalid store_name!<br>");
 			return false;
 		}
 		if(!$val->valid($input['store_hours'],1,200)){
-			echo("Invalid store_hours!<br>");
+			//echo("Invalid store_hours!<br>");
 			return false;
 		}
 		if(!$val->valid($input['store_type'],1,100)){
-			echo("Invalid store_type!<br>");
+			//echo("Invalid store_type!<br>");
 			return false;
 		}
 		if($input['did']=="null" || !is_numeric($input['did'])){	//Can't be null
-			echo("Invalid did!<br>");
+			//echo("Invalid did!<br>");
 			return false;
 		}
 		if($input['quantity']=="null" || !is_numeric($input['quantity'])){	//Can't be null
-			echo("Invalid quantity!<br>");
+			//echo("Invalid quantity!<br>");
 			return false;
 		}
 		if($input['price']=="null" || !is_numeric($input['price'])){	//Can't be null
-			echo("Invalid price!<br>");
+			//echo("Invalid price!<br>");
 			return false;
 		}
 		
@@ -134,7 +134,7 @@ class Inputer{
 		$row = oci_fetch_array($stid,OCI_NUM+OCI_RETURN_NULLS);
 		
 		if(!isset($row[0])){
-			echo("alcohol doesn't exist!");
+			//echo("alcohol doesn't exist!");
 			return false;
 		}
 		
@@ -150,7 +150,7 @@ class Inputer{
 		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
 
 		if(isset($row[0])){
-			echo("sold_at entry already exists!<br>");
+			//echo("sold_at entry already exists!<br>");
 			return false;
 		}
 		
