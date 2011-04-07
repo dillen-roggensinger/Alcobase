@@ -142,8 +142,6 @@ class AccountManager{
 		$err=oci_execute($stid);
 		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
 		
-		oci_close($conn);
-		
 		if(!isset($row[0])){
 			return false;
 		}
@@ -157,6 +155,8 @@ class AccountManager{
 		 
 		$stid = oci_parse($conn, $query);
 		$err = oci_execute($stid);
+		
+		oci_close($conn);
 		
 		// subject
 		$subject = "Change Password for " . $username;
