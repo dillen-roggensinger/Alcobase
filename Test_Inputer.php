@@ -14,7 +14,7 @@ echo("Inputing bought<br>");
 $input=array("username" => "Badoofer108","did" => 32,"quantity" => 2);
 Inputer::insertBought($input);
 echo("Inputing write_comment<br>");
-$input=array("text" => "this comment will blow your mind!","username" => "Badoofer108","did" => 32);
+$input=array("text" => "this comment will blow your mind!","username" => "Badoofer108","did" => 23);
 Inputer::insertWrite_Comment($input);
 
 ?>

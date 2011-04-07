@@ -131,6 +131,23 @@ class Inputer{
 			return false;
 		}
 		
+		//Checks to see that foreign keys exist in other tables
+		$query="
+		SELECT alc.did
+		FROM alcohol alc
+		WHERE alc.did=" . $input['did'];
+		
+		$conn = oci_connect("der2127", "c00kie5", "w4111c.cs.columbia.edu:1521/adb");
+		$stid = oci_parse($conn, $query);
+		$err=oci_execute($stid);
+		$row = oci_fetch_array($stid,OCI_NUM+OCI_RETURN_NULLS);
+		
+		if(!isset($row[0])){
+			echo("alcohol doesn't exist!");
+			return false;
+		}
+		
+		//Checks to see that the row doesn't already exist
 		$query="
 		SELECT s.did
 		FROM sold_at s
@@ -180,6 +197,23 @@ class Inputer{
 			return false;
 		}
 		
+		//Checks to see that foreign keys exist in other tables
+		$query="
+		SELECT alc.did,acc.username
+		FROM alcohol alc, account acc
+		WHERE alc.did=" . $input['did'] . " and acc.username='" . $input['username'] . "'";
+		
+		$conn = oci_connect("der2127", "c00kie5", "w4111c.cs.columbia.edu:1521/adb");
+		$stid = oci_parse($conn, $query);
+		$err=oci_execute($stid);
+		$row = oci_fetch_array($stid,OCI_NUM+OCI_RETURN_NULLS);
+		
+		if(!isset($row[0])){
+			echo("alcohol/username doesn't exist!");
+			return false;
+		}
+		
+		//Checks to see that the row doesn't already exist
 		$query="
 		SELECT f.did
 		FROM favorite f
@@ -230,6 +264,23 @@ class Inputer{
 			return false;
 		}
 		
+		//Checks to see that foreign keys exist in other tables
+		$query="
+		SELECT alc.did,acc.username
+		FROM alcohol alc, account acc
+		WHERE alc.did=" . $input['did'] . " and acc.username='" . $input['username'] . "'";
+		
+		$conn = oci_connect("der2127", "c00kie5", "w4111c.cs.columbia.edu:1521/adb");
+		$stid = oci_parse($conn, $query);
+		$err=oci_execute($stid);
+		$row = oci_fetch_array($stid,OCI_NUM+OCI_RETURN_NULLS);
+		
+		if(!isset($row[0])){
+			echo("alcohol/username doesn't exist!");
+			return false;
+		}
+		
+		//Checks to see that the row doesn't already exist
 		$query="
 		SELECT b.did
 		FROM bought b
@@ -282,6 +333,23 @@ class Inputer{
 			return false;
 		}
 		
+		//Checks to see that foreign keys exist in other tables
+		$query="
+		SELECT alc.did,acc.username
+		FROM alcohol alc, account acc
+		WHERE alc.did=" . $input['did'] . " and acc.username='" . $input['username'] . "'";
+		
+		$conn = oci_connect("der2127", "c00kie5", "w4111c.cs.columbia.edu:1521/adb");
+		$stid = oci_parse($conn, $query);
+		$err=oci_execute($stid);
+		$row = oci_fetch_array($stid,OCI_NUM+OCI_RETURN_NULLS);
+		
+		if(!isset($row[0])){
+			echo("alcohol/username doesn't exist!");
+			return false;
+		}
+		
+		//Checks to see that the row doesn't already exist
 		$query="
 		SELECT wc.did
 		FROM write_comment wc
@@ -290,12 +358,13 @@ class Inputer{
 		$conn = oci_connect("der2127", "c00kie5", "w4111c.cs.columbia.edu:1521/adb");
 		$stid = oci_parse($conn, $query);
 		$err=oci_execute($stid);
-		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
+		$row = oci_fetch_array($stid,OCI_NUM+OCI_RETURN_NULLS);
 
 		if(isset($row[0])){
 			echo("bought entry already exists!<br>");
 			return false;
 		}
+		
 		
 		$query="INSERT INTO write_comment VALUES('" . $input['text'] . "',sysdate,'" . $input['username'] . "',"
 		. $input['did'] . ")";
