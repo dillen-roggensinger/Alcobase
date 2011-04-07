@@ -5,6 +5,15 @@ class HeaderFooter{
 			<head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\">
 			<title>Alcobase</title><link href=\"Style.css\" rel=\"stylesheet\" type=\"text/css\">
 			<style type=\"text/css\"><!--.style1 {font-family: Arial, Helvetica, sans-serif}--></style>\n
+			<script language='javascript' type='text/javascript'>
+			function limitText(limitField, limitCount, limitNum) {
+				if (limitField.value.length > limitNum) {
+					limitField.value = limitField.value.substring(0, limitNum);
+				} else {
+					limitCount.value = limitNum - limitField.value.length;
+				}
+			}
+			</script>
 			</head><body>\n
 			<div id='header'>\n
 			<h1><a href='index.php'>ALCOBASE</a></h1>\n

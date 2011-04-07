@@ -71,17 +71,19 @@ if(isset($_COOKIE['user'])){
 		}
 		echo "</tr>";
 	}	
-	echo "<tr>
-				<td colspan='13' align='right'><a href='passc.php'>Change Password</a></td>
+	echo "</table></br>
+		<table align='center'>
+			<tr>
+				<td><a href='passc.php'>Change Password</a></td>
 			</tr>";
 	if($am->isAdmin($user)){
 		echo "<tr>
-				<td colspan='13' align='right'><a href='add.php'>Add to database</a></td>
+				<td><a href='add.php'>Add to database</a></td>
 			</tr>";
 		
 	}
 	echo "<tr>
-			<td colspan='13' align='right'><a href='logout.php'>Logout</a></td>
+			<td><a href='logout.php'>Logout</a></td>
 		</tr>";
 }
 else

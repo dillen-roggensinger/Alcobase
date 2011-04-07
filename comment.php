@@ -7,7 +7,7 @@
 	$hf = new HeaderFooter();
 	$am = new AccountManager();
 	$i = new Inputer();
-	$text = $_POST['comment'];
+	$text = $_POST['limitedtextarea'];
 	$hf->header();
 	$array = array('text' => $text, 'username' => $user, 'did' => $did);
 	$result = $i->insertWrite_Comment($array);

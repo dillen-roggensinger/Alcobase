@@ -100,21 +100,25 @@
 		$rows=0;
 		foreach($result as $r){
 			$rows++;
-			if($rows%2==0)
-				echo "<tr class='d0'>";
-			else
-				echo "<tr class='d1'>";
-			foreach($r as $c){
-				echo "<td>".$c."</td>";
+			if($rows%2==0){
+				echo "<tr class='d0'><td>".$r['USERNAME']."</td><td>".$r['TIME']."</td></tr>";
+				echo "<tr class='d0'><td colspan='2'>".$r['TEXT']."</td></tr>";
 			}
-			echo "</tr>";
+			else{
+				echo "<tr class='d1'><td>".$r['USERNAME']."</td><td>".$r['TIME']."</td></tr>";
+				echo "<tr class='d1'><td colspan='2'>".$r['TEXT']."</td></tr>";
+			}
 		}
 		echo "</table>
 			</br>
 			<form action='comment.php?did=".$did."' method='POST'>
 			<table align='center'>
 				<tr>
-					<td><textarea name='comment' rows='5' cols='50'>Add Comment</textarea></td>
+					<td><textarea rows='5' cols='50' wrap='physical' name='limitedtextarea' 
+					onKeyDown='limitText(this.form.limitedtextarea,this.form.countdown,1000);' 
+					onKeyUp='limitText(this.form.limitedtextarea,this.form.countdown,1000);'>Add Comment</textarea><br>
+					<font size='1'>(Maximum characters: 1000)<br>
+					You have <input readonly type='text' name='countdown' size='4' value='1000'> characters left.</font></td>
 				</tr>
 				<tr>
 					<td><input type='submit' value='Comment!'></td>
