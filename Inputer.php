@@ -8,53 +8,53 @@ class Inputer{
 	 */
 	function insertAlcohol($input){
 		if(count($input)!=11){
-			echo("Invalid input!");
+			//echo("Invalid input!");
 			return false;
 		}
 		require_once("Validator.php");
 		$val=new Validator();
 		if($input['name']=="null" || !$val->valid($input['name'],1,100)){	//Can't be null
-			echo("Invalid name!<br>");
+			//echo("Invalid name!<br>");
 			return false;
 		}
 		if($input['drink']=="null" && !$val->valid($input['drink'],1,10)){	//Can't be null
-			echo("Invalid drink!<br>");
+			//echo("Invalid drink!<br>");
 			return false;
 		}
 		if($input['volume']!="null" && !is_numeric($input['volume'])){
-			echo("Invalid volume!<br>");
+			//echo("Invalid volume!<br>");
 			return false;
 		}
 		if(!$val->valid($input['brand'],1,100)){
-			echo("Invalid brand!<br>");
+			//echo("Invalid brand!<br>");
 			return false;
 		}
 		if($input['alcohol_content']!="null" && !is_numeric($input['alcohol_content'])){
-			echo("Invalid alcohol_content!<br>");
+			//echo("Invalid alcohol_content!<br>");
 			return false;
 		}
 		if(!$val->valid($input['country'],1,100)){
-			echo("Invalid country!<br>");
+			//echo("Invalid country!<br>");
 			return false;
 		}
 		if($input['calories']!="null" && !is_numeric($input['calories'])){
-			echo("Invalid calories!<br>");
+			//echo("Invalid calories!<br>");
 			return false;
 		}
 		if(!$val->valid($input['type'],1,100)){
-			echo("Invalid type!<br>");
+			//echo("Invalid type!<br>");
 			return false;
 		}
 		if($input['year']!="null" && !is_numeric($input['year'])){
-			echo("Invalid year!<br>");
+			//echo("Invalid year!<br>");
 			return false;
 		}
 		if(!$val->valid($input['flavor'],1,100)){
-			echo("Invalid flavor!<br>");
+			//echo("Invalid flavor!<br>");
 			return false;
 		}
 		if($input['rating']!="null" && !is_numeric($input['rating'])){
-			echo("Invalid rating!<br>");
+			//echo("Invalid rating!<br>");
 			return false;
 		}
 		
@@ -67,8 +67,6 @@ class Inputer{
 		
 		$did=$row['DID']+1;
 		
-		echo("Did: ".$did."<br>");
-
 		$query="INSERT INTO alcohol VALUES('" . $input['name'] . "','" . $input['drink'] . "'," . $input['volume']
 			 . ",'" . $input['brand'] . "'," . $did . "," . $input['alcohol_content'] . ",'"
 			 . $input['country'] . "'," . $input['calories'] . ",'" . $input['type'] . "'," . $input['year']
@@ -87,38 +85,38 @@ class Inputer{
 	 */
 	function insertSold_At($input){
 		if(count($input)!=7){
-			echo("Invalid input!");
+			//echo("Invalid input!");
 			return false;
 		}
 		
 		require_once("Validator.php");
 		$val=new Validator();
 		if($input['location']=="null" || !$val->valid($input['location'],1,200)){	//Can't be null
-			echo("Invalid location!<br>");
+			//echo("Invalid location!<br>");
 			return false;
 		}
 		if($input['store_name']=="null" || !$val->valid($input['store_name'],1,100)){	//Can't be null
-			echo("Invalid store_name!<br>");
+			//echo("Invalid store_name!<br>");
 			return false;
 		}
 		if(!$val->valid($input['store_hours'],1,200)){
-			echo("Invalid store_hours!<br>");
+			//echo("Invalid store_hours!<br>");
 			return false;
 		}
 		if(!$val->valid($input['store_type'],1,100)){
-			echo("Invalid store_type!<br>");
+			//echo("Invalid store_type!<br>");
 			return false;
 		}
 		if($input['did']=="null" || !is_numeric($input['did'])){	//Can't be null
-			echo("Invalid did!<br>");
+			//echo("Invalid did!<br>");
 			return false;
 		}
 		if($input['quantity']=="null" || !is_numeric($input['quantity'])){	//Can't be null
-			echo("Invalid quantity!<br>");
+			//echo("Invalid quantity!<br>");
 			return false;
 		}
 		if($input['price']=="null" || !is_numeric($input['price'])){	//Can't be null
-			echo("Invalid price!<br>");
+			//echo("Invalid price!<br>");
 			return false;
 		}
 		
@@ -134,7 +132,7 @@ class Inputer{
 		$row = oci_fetch_array($stid,OCI_NUM+OCI_RETURN_NULLS);
 		
 		if(!isset($row[0])){
-			echo("alcohol doesn't exist!");
+			//echo("alcohol doesn't exist!");
 			return false;
 		}
 		
@@ -151,7 +149,7 @@ class Inputer{
 		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
 
 		if(isset($row[0])){
-			echo("sold_at entry already exists!<br>");
+			//echo("sold_at entry already exists!<br>");
 			return false;
 		}
 		
@@ -172,18 +170,18 @@ class Inputer{
 	 */
 	function insertFavorite($input){
 		if(count($input)!=2){
-			echo("Invalid input!");
+			//echo("Invalid input!");
 			return false;
 		}
 		
 		require_once("Validator.php");
 		$val=new Validator();
 		if($input['username']=="null" || !$val->validUsername($input['username'])){	//Can't be null
-			echo("Invalid username!<br>");
+			//echo("Invalid username!<br>");
 			return false;
 		}
 		if($input['did']=="null" || !is_numeric($input['did'])){	//Can't be null
-			echo("Invalid did!<br>");
+			//echo("Invalid did!<br>");
 			return false;
 		}
 		
@@ -199,7 +197,7 @@ class Inputer{
 		$row = oci_fetch_array($stid,OCI_NUM+OCI_RETURN_NULLS);
 		
 		if(!isset($row[0])){
-			echo("alcohol/username doesn't exist!");
+			//echo("alcohol/username doesn't exist!");
 			return false;
 		}
 		
@@ -214,7 +212,7 @@ class Inputer{
 		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
 
 		if(isset($row[0])){
-			echo("favorite entry already exists!<br>");
+			//echo("favorite entry already exists!<br>");
 			return false;
 		}
 		
@@ -233,34 +231,34 @@ class Inputer{
 	 */
 	function insertBought($input){
 		if(count($input)!=6){
-			echo("Invalid input!");
+			//echo("Invalid input!");
 			return false;
 		}
 		
 		require_once("Validator.php");
 		$val=new Validator();
 		if($input['username']=="null" || !$val->validUsername($input['username'])){	//Can't be null
-			echo("Invalid username!<br>");
+			//echo("Invalid username!<br>");
 			return false;
 		}
 		if($input['did']=="null" || !is_numeric($input['did'])){	//Can't be null
-			echo("Invalid did!<br>");
+			//echo("Invalid did!<br>");
 			return false;
 		}
 		if($input['quantity']=="null" || !is_numeric($input['quantity'])){	//Can't be null
-			echo("Invalid quantity!<br>");
+			//echo("Invalid quantity!<br>");
 			return false;
 		}
 		if($input['price']=="null" || !is_numeric($input['price'])){	//Can't be null
-			echo("Invalid price!<br>");
+			//echo("Invalid price!<br>");
 			return false;
 		}
 		if($input['store_name']=="null" || $val->valid($input['store_name'])){	//Can't be null
-			echo("Invalid store_name!<br>");
+			//echo("Invalid store_name!<br>");
 			return false;
 		}
 		if($input['location']=="null" || $val->valid($input['location'])){	//Can't be null
-			echo("Invalid store_name!<br>");
+			//echo("Invalid store_name!<br>");
 			return false;
 		}
 		
@@ -278,7 +276,7 @@ class Inputer{
 		$row = oci_fetch_array($stid,OCI_NUM+OCI_RETURN_NULLS);
 		
 		if(!isset($row[0])){
-			echo("Foreign keys don't exist!");
+			//echo("Foreign keys don't exist!");
 			return false;
 		}
 		
@@ -289,14 +287,12 @@ class Inputer{
 		WHERE b.username='" . $input['username'] . "' and b.did=".$input['did'] . " and b.price="
 		. $input['price'] . " and b.quantity=".$input['quantity'] . " and b.time=sysdate";
 		
-		echo("Query2:<br>".$query."<br>");
-		
 		$stid = oci_parse($conn, $query);
 		$err=oci_execute($stid);
 		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
 
 		if(isset($row[0])){
-			echo("bought entry already exists!<br>");
+			//echo("bought entry already exists!<br>");
 			return false;
 		}
 		
@@ -304,8 +300,6 @@ class Inputer{
 		"','" . $input['store_name'] . "'," . $input['did'] . "," . $input['quantity'] . "," . $input['price'] .")";
 		$stid = oci_parse($conn, $query);
 		$err=oci_execute($stid);
-		
-		echo("Query:<br>".$query."<br>");
 		
 		oci_close($conn);
 		
@@ -317,24 +311,23 @@ class Inputer{
 	 * (text, username, did)
 	 */
 	function insertWrite_Comment($input){
-		echo("Starting bought insert!<br>");
 		if(count($input)!=3){
-			echo("Invalid input!");
+			//echo("Invalid input!");
 			return false;
 		}
 		
 		require_once("Validator.php");
 		$val=new Validator();
 		if($input['text']=="null" || !$val->valid($input['text'],1,1000)){	//Can't be null
-			echo("Invalid text!<br>");
+			//echo("Invalid text!<br>");
 			return false;
 		}
 		if($input['username']=="null" || !$val->validUsername($input['username'])){	//Can't be null
-			echo("Invalid username!<br>");
+			//echo("Invalid username!<br>");
 			return false;
 		}
 		if($input['did']=="null" || !is_numeric($input['did'])){	//Can't be null
-			echo("Invalid quantity!<br>");
+			//echo("Invalid quantity!<br>");
 			return false;
 		}
 		
@@ -350,7 +343,7 @@ class Inputer{
 		$row = oci_fetch_array($stid,OCI_NUM+OCI_RETURN_NULLS);
 		
 		if(!isset($row[0])){
-			echo("alcohol/username doesn't exist!");
+			//echo("alcohol/username doesn't exist!");
 			return false;
 		}
 		
@@ -365,7 +358,7 @@ class Inputer{
 		$row = oci_fetch_array($stid,OCI_NUM+OCI_RETURN_NULLS);
 
 		if(isset($row[0])){
-			echo("bought entry already exists!<br>");
+			//echo("bought entry already exists!<br>");
 			return false;
 		}
 		
