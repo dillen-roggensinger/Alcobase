@@ -17,11 +17,11 @@ $hf->header();
 		<OPTION VALUE="volume">Volume</OPTION>
 		<OPTION VALUE="brand">Brand</OPTION>
 		<OPTION VALUE="alcohol_content">Alcohol Content</OPTION>
-		<OPTION VALUE="countr">Country</OPTION>
+		<OPTION VALUE="country">Country</OPTION>
 		<OPTION VALUE="rating">Rating</OPTION>
 		<OPTION VALUE="store_name">Store Name</OPTION>
 		<OPTION VALUE="store_type">Store Type</OPTION>
-		<OPTION VALUE="zip_code">Zip Code</OPTION>
+		<OPTION VALUE="locaiton">Location</OPTION>
 		
 		</SELECT></td>
 	</tr>
