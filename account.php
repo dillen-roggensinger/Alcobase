@@ -12,28 +12,56 @@ if(isset($_COOKIE['user'])){
 	$user = $_COOKIE['user'];
 	echo "<table align='center'>
 			<tr>
-				<td colspan='4'><h2>".$user."'s Alcohols</h2></td>
+				<td colspan='12'><h2>".$user."'s Alcohols</h2></td>
 			</tr>
 			<tr>
-				<td><h3>Name</h3></td>
-				<td><h3>Favorite</h3></td>
-				<td><h3>Bought</h3></td>
-				<td><h3>Rating</h3></td>
+				<td colspan='12'><h3>Favorite</h3></td>
 			</tr>
 			<tr>
-				<td colspan='4'>Get alcohols</td>
+				<th><b>Name</b></th>
+				<th><b>Drink</b></th>
+				<th><b>Volume</b></th>
+				<th><b>Rating</b></th>
+				<th><b>Brand</b></th>
+				<th><b>Alcohol Content</b></th>
+				<th><b>Country</b></th>
+				<th><b>Quantity</b></th>
+				<th><b>Price></b></th>
+				<th><b>Store Name</b></th>
+				<th><b>Store Type</b></th>
+				<th><b>Zip Code</b></th>
+			</tr>";
+		
+	
+	echo "<tr>
+				<td colspan='12'><h3>Bought</h3></td>
 			</tr>
 			<tr>
-				<td colspan='4' align='right'><a href='passc.php'>Change Password</a></td>
+				<th><b>Name</b></th>
+				<th><b>Drink</b></th>
+				<th><b>Volume</b></th>
+				<th><b>Rating</b></th>
+				<th><b>Brand</b></th>
+				<th><b>Alcohol Content</b></th>
+				<th><b>Country</b></th>
+				<th><b>Quantity</b></th>
+				<th><b>Price></b></th>
+				<th><b>Store Name</b></th>
+				<th><b>Store Type</b></th>
+				<th><b>Zip Code</b></th>
+			</tr>";
+			
+	echo "<tr>
+				<td colspan='12' align='right'><a href='passc.php'>Change Password</a></td>
 			</tr>";
 	if($am->isAdmin($user)){
 		echo "<tr>
-				<td colspan='4' align='right'><a href='add.php'>Add to database</a></td>
+				<td colspan='12' align='right'><a href='add.php'>Add to database</a></td>
 			</tr>";
 		
 	}
 	echo "<tr>
-			<td colspan='4' align='right'><a href='logout.php'>Logout</a></td>
+			<td colspan='12' align='right'><a href='logout.php'>Logout</a></td>
 		</tr>";
 }
 else

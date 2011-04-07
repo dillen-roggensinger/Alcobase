@@ -1,11 +1,27 @@
 <?php
     $did = $_GET['did'];
-    $name = $_GET['name'];
     include('headerfooter.php'); 
+    include('Retriever.php');
+    $ret = new Retriever();
 	$hf = new HeaderFooter();
 	$hf->header();
-	$attrib1='poo';
-	$attrib2='poopie';
+	if($_GET['drink']=='wine'){
+		$attrib1='type';
+		$attrib2='year';
+	}
+	if($_GET['drink']=='beer'){
+		$attrib1='calories';
+		$attrib2='type';
+	}
+	if($_GET['drink']=='liquor'){
+		$attrib1='type';
+		$attrib2='year';
+	}
+	if($_GET['drink']=='wdrink'){
+		$attrib1='calories';
+		$attrib2='flavor';
+	}
+	
 	
 	echo "<table align='center'>
 			<tr>
@@ -27,12 +43,12 @@
 		</br>
 		<table align='center'>
 			<tr>
-				<td>Quantity</td>
-				<td>Price</td>
+				<td>Location</td>
 				<td>Store Name</td>
 				<td>Store Type</td>
 				<td>Store Hours</td>
-				<td>Street Address</td>
+				<td>Quantity</td>
+				<td>Price</td>
 			</tr>";
 			
 	echo "</table>

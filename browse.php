@@ -67,7 +67,8 @@ foreach($data as $r){
 			break;
 		}
 		$did = $r['DID'];
-		echo "<td><a href='alcohol.php?did=".$did."'>".$c."</td>";
+		$drink = $r['DRINK'];
+			echo "<td><a href='alcohol.php?did=".$did."&drink=".$drink."'>".$c."</td>";
 	}
 	echo "</tr>";
 }
