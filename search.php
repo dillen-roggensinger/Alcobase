@@ -21,7 +21,7 @@ $hf->header();
 		<OPTION VALUE="rating">Rating</OPTION>
 		<OPTION VALUE="store_name">Store Name</OPTION>
 		<OPTION VALUE="store_type">Store Type</OPTION>
-		<OPTION VALUE="locaiton">Location</OPTION>
+		<OPTION VALUE="location">Location</OPTION>
 		
 		</SELECT></td>
 	</tr>

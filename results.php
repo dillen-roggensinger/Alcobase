@@ -16,7 +16,7 @@ if(isset($_COOKIE['user'])){
 	if($am->isAdmin($user))
 		$length = 13;
 }
-$sort = 'name';
+$sort = $_GET['choice'];
 $order = 0;
 //set sort category
 if(isset($_GET['sort'])){
@@ -55,7 +55,7 @@ else{
 				<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=price&order=1'>&uarr;</a>Price<a href='results.php?choice=".$cat."&search=".$text."&sort=price&order=0'>&darr;</a></b></th>
 				<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=store_name&order=0'>&uarr;</a>Store Name<a href='results.php?choice=".$cat."&search=".$text."&sort=store_name&order=1'>&darr;</a></b></th>
 				<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=store_type&order=0'>&uarr;</a>Store Type<a href='results.php?choice=".$cat."&search=".$text."&sort=store_type&order=1'>&darr;</a></b></th>
-				<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=zip_code&order=1'>&uarr;</a>Zip Code<a href='results.php?choice=".$cat."&search=".$text."&sort=zip_code&order=0'>&darr;</a></b></th>";
+				<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=location&order=1'>&uarr;</a>Location<a href='results.php?choice=".$cat."&search=".$text."&sort=location&order=0'>&darr;</a></b></th>";
 	if(isset($_COOKIE['user'])){
 		$user = $_COOKIE['user'];
 		if($am->isAdmin($user))
