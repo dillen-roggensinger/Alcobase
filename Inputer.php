@@ -81,7 +81,6 @@ class Inputer{
 			 . ",'" . $input['brand'] . "'," . $input['did'] . "," . $input['alcohol_content'] . ",'"
 			 . $input['country'] . "'," . $input['calories'] . ",'" . $input['type'] . "'," . $input['year']
 			 . ",'" . $input['flavor'] . "'," . $input['rating'] . ")";
-		$conn = oci_connect("der2127", "c00kie5", "w4111c.cs.columbia.edu:1521/adb");
 		$stid = oci_parse($conn, $query);
 		$err=oci_execute($stid);
 		
@@ -154,7 +153,6 @@ class Inputer{
 		WHERE s.location='".$input['location']."' and s.store_name='".$input['store_name']
 		."' and s.price=".$input['price']." and s.did=".$input['did'];
 
-		$conn = oci_connect("der2127", "c00kie5", "w4111c.cs.columbia.edu:1521/adb");
 		$stid = oci_parse($conn, $query);
 		$err=oci_execute($stid);
 		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
@@ -167,7 +165,6 @@ class Inputer{
 		$query="INSERT INTO sold_at VALUES('" . $input['location'] . "','" . $input['store_name'] . "','"
 		. $input['store_hours'] . "','" . $input['store_type'] . "'," . $input['did'] . "," . $input['quantity'] . ","
 			 . $input['price'] . ")";
-		$conn = oci_connect("der2127", "c00kie5", "w4111c.cs.columbia.edu:1521/adb");
 		$stid = oci_parse($conn, $query);
 		$err=oci_execute($stid);
 		
@@ -219,7 +216,6 @@ class Inputer{
 		FROM favorite f
 		WHERE f.username='".$input['username']."' and f.did=".$input['did'];
 
-		$conn = oci_connect("der2127", "c00kie5", "w4111c.cs.columbia.edu:1521/adb");
 		$stid = oci_parse($conn, $query);
 		$err=oci_execute($stid);
 		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
@@ -230,7 +226,6 @@ class Inputer{
 		}
 		
 		$query="INSERT INTO favorite VALUES('" . $input['username'] . "'," . $input['did'] . ")";
-		$conn = oci_connect("der2127", "c00kie5", "w4111c.cs.columbia.edu:1521/adb");
 		$stid = oci_parse($conn, $query);
 		$err=oci_execute($stid);
 		
@@ -286,7 +281,6 @@ class Inputer{
 		FROM bought b
 		WHERE b.username='".$input['username']."' and b.did=".$input['did'] . " and b.time=sysdate";
 
-		$conn = oci_connect("der2127", "c00kie5", "w4111c.cs.columbia.edu:1521/adb");
 		$stid = oci_parse($conn, $query);
 		$err=oci_execute($stid);
 		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
@@ -298,7 +292,6 @@ class Inputer{
 		
 		$query="INSERT INTO bought VALUES('" . $input['username'] . "'," . $input['did'] . "," . $input['quantity']
 		. ", sysdate)";
-		$conn = oci_connect("der2127", "c00kie5", "w4111c.cs.columbia.edu:1521/adb");
 		$stid = oci_parse($conn, $query);
 		$err=oci_execute($stid);
 		
@@ -355,7 +348,6 @@ class Inputer{
 		FROM write_comment wc
 		WHERE wc.username='".$input['username']."' and wc.did=".$input['did'] . " and wc.time=sysdate";
 
-		$conn = oci_connect("der2127", "c00kie5", "w4111c.cs.columbia.edu:1521/adb");
 		$stid = oci_parse($conn, $query);
 		$err=oci_execute($stid);
 		$row = oci_fetch_array($stid,OCI_NUM+OCI_RETURN_NULLS);
@@ -368,8 +360,6 @@ class Inputer{
 		
 		$query="INSERT INTO write_comment VALUES('" . $input['text'] . "',sysdate,'" . $input['username'] . "',"
 		. $input['did'] . ")";
-		echo("Query: ".$query."<br>");
-		$conn = oci_connect("der2127", "c00kie5", "w4111c.cs.columbia.edu:1521/adb");
 		$stid = oci_parse($conn, $query);
 		$err=oci_execute($stid);
 		

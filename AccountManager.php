@@ -201,7 +201,7 @@ class AccountManager{
 		
 		oci_close($conn);
 		
-		if(!isset($row)){
+		if(!isset($row[0])){
 			return false;
 		}
 		if($row[0]==1){
@@ -210,6 +210,34 @@ class AccountManager{
 		else{
 			return false;
 		}
+	}
+	
+	function makeAdmin($username){
+		require_once("Validator.php");
+		$val=new Validator();
+		if(!$val->validUsername($username)){
+			return false;
+		}
+		
+		$query="
+		SELECT a.username
+		FROM account a
+		WHERE a.username='$username'";
+		
+		$conn = oci_connect("der2127", "c00kie5", "w4111c.cs.columbia.edu:1521/adb");
+		$stid = oci_parse($conn, $query);
+		$err=oci_execute($stid);
+		$row = oci_fetch_array($stid,OCI_NUM+OCI_RETURN_NULLS);
+		
+		if(!isset($row[0])){
+			echo("Username does not exist!<br>");
+			return false;
+		}
+		$query="UPDATE account a SET a.admin=1 WHERE a.username='" . $username . "'";
+		$stid = oci_parse($conn, $query);
+		$err=oci_execute($stid);
+		
+		oci_close($conn);
 	}
 }
 
