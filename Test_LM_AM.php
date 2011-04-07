@@ -53,6 +53,15 @@ else{
 	echo("Not admin!<br>");
 }
 
+echo("Making nonadmin an admin!<br>");
+$am->makeAdmin('cookiemonster');
+if($am->isAdmin("cookiemonster")){
+	echo("Admin!<br>");
+}
+else{
+	echo("Not admin!<br>");
+}
+
 
 if(isset($_POST['password'])){
 	$username=$_POST['username'];
