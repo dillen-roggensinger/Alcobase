@@ -61,7 +61,7 @@ class Sorter{
 	/*Searches through a given category for matching rows.
 	 * Valid attribute inputs include:
 	 * name, drink, volume, rating, brand, alcohol_content, country, quantity, price, store_name,
-	 * 		store_type, zip_code, rating
+	 * 		store_type, location, rating
 	 * Valid order inputs include:
 	 * 0 => descending, 1 => ascending
 	 * Valid sortBy inputs are the same as attribute.
@@ -74,12 +74,12 @@ class Sorter{
 		if($category=="name" || $category=="drink" || $category=="brand" || $category=="country"
 		|| $category=="store_name"	|| $category=="store_type" || $category=="rating"
 		|| $category=="alcohol_content" || $category=="quantity" || $category=="price"
-		|| $category=="zip_code" || $category=="volume" || $category=="did"){
+		|| $category=="location" || $category=="volume" || $category=="did"){
 			
 			if($sortBy=="name" || $sortBy=="drink" || $sortBy=="brand" || $sortBy=="country"
 			|| $sortBy=="store_name"	|| $sortBy=="store_type" || $sortBy=="rating"
 			|| $sortBy=="alcohol_content" || $sortBy=="quantity" || $sortBy=="price"
-			|| $sortBy=="zip_code" || $sortBy=="volume" || $sortBy=="did"){
+			|| $sortBy=="location" || $sortBy=="volume" || $sortBy=="did"){
 			
 				require_once("Validator.php");
 				$val=new Validator();
@@ -89,18 +89,11 @@ class Sorter{
 				
 				$table=NULL;
 				if($category=="store_name" || $category=="store_type" || $category=="quantity"
-				|| $category=="price" || $category=="zip_code"){
+				|| $category=="price" || $category=="location"){
 					$table="s";
 				}
 				else{
 					$table="a";
-				}
-				
-				if($category=="zip_code"){
-					$category="location";
-				}
-				if($sortBy=="zip_code"){
-					$sortBy="location";
 				}
 				
 				$query="
@@ -121,8 +114,6 @@ class Sorter{
 				
 				$column=array();
 				foreach ($output as $key => &$entry) {
-					$pieces=explode(" ",$entry['LOCATION']);
-					$entry['LOCATION']=$pieces[count($pieces)-1];
 					$column[$key] = $entry[strtoupper($sortBy)];
 				}
 				if($order==0){
