@@ -10,9 +10,7 @@ class Sorter{
 	 * 0 => descending, 1 => ascending
 	 */
 	function browseData($attribute,$order){
-		
-		
-		if(!($order==0 || $order==1)){
+		if(!(isset($attribute) && isset($order))){
 			return NULL;
 		}
 		if($attribute=="name" || $attribute=="drink" || $attribute=="rating" || $attribute=="brand" ||
@@ -73,7 +71,7 @@ class Sorter{
 	 * Valid text includes only alphanumerics and underscores.
 	 */
 	function searchData($category,$text,$sortBy,$order){
-		if(!(isset($category) && isset($text))){
+		if(!(isset($category) && isset($text) && isset($sortBy) && isset($order))){
 			return NULL;
 		}
 		if($category=="name" || $category=="drink" || $category=="brand" || $category=="country"
