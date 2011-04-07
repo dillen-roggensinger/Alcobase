@@ -3,8 +3,7 @@
 require_once("Sorter.php");
 $sorter=new Sorter();
 
-echo("<strong>Sorting by 'name' by '0' (decending order):</strong><br><br>");
-$array=$sorter->browseData("volume",1);
+$array=$sorter->browseData("drink",0);
 if(isset($array)){
 	foreach($array as $r){
 		foreach($r as $c){
@@ -15,8 +14,7 @@ if(isset($array)){
 }
 echo("<strong>Successful Browse!</strong><br>");
 
-echo("<br><br><br><strong>Searching through 'name' for 'Bass':</strong><br><br>");
-$array2=$sorter->searchData("drink","i");
+$array2=$sorter->searchData("drink","beer","name",0);
 if(isset($array2)){
 	foreach($array2 as $r){
 		foreach($r as $c){

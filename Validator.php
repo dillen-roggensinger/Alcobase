@@ -112,6 +112,19 @@ class Validator{
 		}
 	}
 	
+	/*Validate a search expression
+	 * Search expressions can only contain alpha numerics
+	 */
+	function validSearch($text){
+		if(!isset($text)){
+			return false;
+		}
+		$test = filter_var($text, FILTER_VALIDATE_REGEXP,array('options'=>array('regexp'=>'/^\w+$/')));
+		if(isset($test)){
+			return $test;
+		}
+		return false;
+	}
 }
 
 
