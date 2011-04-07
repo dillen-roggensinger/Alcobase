@@ -1,30 +1,64 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
 <?php
-include('headerfooter.php'); 
+include('headerfooter.php');
+include('AccountManager.php');
+include('Sorter.php'); 
 $hf = new HeaderFooter();
+$am = new AccountManager();
+$s = new Sorter();
 $hf->header();
+$cat = $_POST['choice'];
+$text = $_POST['search'];
 
-
+$length = 12;
+if(isset($_COOKIE['user'])){
+	$user = $_COOKIE['user'];
+	if($am->isAdmin($user))
+		$length = 13;
+}
 echo "<table align='center'>
 		<tr>
-			<td colspan='12'><h2>Results</h2></td>
+			<td colspan='".$length."'><h2>Results</h2></td>
 		</tr>
 		<tr>
-			<td>&uarr; Name &darr;</td>
-			<td>&uarr; Drink &darr;</td>
-			<td>&uarr; Volume &darr;</td>
-			<td>&uarr; Brand &darr;</td>
-			<td>&uarr; Alcohol Content &darr;</td>
-			<td>&uarr; Country &darr;</td>
-			<td>&uarr; Quantity &darr;</td>
-			<td>&uarr; Price &darr;</td>
-			<td>&uarr; Rating &darr;</td>
-			<td>&uarr; Store Name &darr;</td>
-			<td>&uarr; Store Type &darr;</td>
-			<td>&uarr; Zip Code &darr;</td>
-		</tr>
-	</table>";
+			<th><b><a href='browse.php?sort=name&order=0'>&uarr;</a> Name <a href='browse.php?sort=name&order=1'>&darr;</a></b></th>
+			<th><b><a href='browse.php?sort=drink&order=0'>&uarr;</a> Drink <a href='browse.php?sort=drink&order=1'>&darr;</a></b></th>
+			<th><b><a href='browse.php?sort=volume&order=0'>&uarr;</a> Volume <a href='browse.php?sort=volume&order=1'>&darr;</a></b></th>
+			<th><b><a href='browse.php?sort=rating&order=1'>&uarr;</a> Rating <a href='browse.php?sort=rating&order=0'>&darr;</a></b></th>
+			<th><b><a href='browse.php?sort=brand&order=0'>&uarr;</a> Brand <a href='browse.php?sort=brand&order=1'>&darr;</a></b></th>
+			<th><b><a href='browse.php?sort=alcohol_content&order=1'>&uarr;</a> Alcohol Content <a href='browse.php?sort=alcohol_content&order=0'>&darr;</a></b></th>
+			<th><b><a href='browse.php?sort=country&order=0'>&uarr;</a> Country <a href='browse.php?sort=country&order=1'>&darr;</a></b></th>
+			<th><b><a href='browse.php?sort=quantity&order=1'>&uarr;</a> Quantity <a href='browse.php?sort=quantity&order=0'>&darr;</a></b></th>
+			<th><b><a href='browse.php?sort=price&order=1'>&uarr;</a> Price <a href='browse.php?sort=price&order=0'>&darr;</a></b></th>
+			<th><b><a href='browse.php?sort=store_name&order=0'>&uarr;</a> Store Name <a href='browse.php?sort=store_name&order=1'>&darr;</a></b></th>
+			<th><b><a href='browse.php?sort=store_type&order=0'>&uarr;</a> Store Type <a href='browse.php?sort=store_type&order=1'>&darr;</a></b></th>
+			<th><b><a href='browse.php?sort=zip_code&order=1'>&uarr;</a> Zip Code <a href='browse.php?sort=zip_code&order=0'>&darr;</a></b></th>";
+if(isset($_COOKIE['user'])){
+	$user = $_COOKIE['user'];
+	if($am->isAdmin($user))
+		echo "<th><b><a href='browse.php?sort=did&order=1'>&uarr;</a> Did <a href='browse.php?sort=did&order=0'>&darr;</a></b></th>";
+}
 
+$data = $s->searchData($cat, $text);
+$rows=0;
+foreach($data as $r){
+	$rows++;
+	if($rows%2==0)
+		echo "<tr class='d0'>";
+	else
+		echo "<tr class='d1'>";
+	$count = 0;
+	foreach($r as $c){
+		$count++;
+		if($length<13 && $count>12){
+			break;
+		}
+		echo "<td>".$c."</td>";
+	}
+	echo "</tr>";
+}
+
+echo "</table>";
 
 $hf->footer();
 ?>
