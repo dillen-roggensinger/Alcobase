@@ -27,9 +27,6 @@ class Sorter{
 			FROM alcohol a,sold_at s
 			WHERE a.did=s.did";
 			
-			echo("Query:<br>".$query."<br><br><br>");
-			
-			
 			$conn = oci_connect("der2127", "c00kie5", "w4111c.cs.columbia.edu:1521/adb");
 			$stid = oci_parse($conn, $query);
 			$err=oci_execute($stid);
