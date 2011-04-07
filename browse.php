@@ -17,25 +17,25 @@ if(isset($_COOKIE['user'])){
 
 echo "<table align='center'>
 		<tr>
-			<td colspan='".$length."'><h2>Browse</h2></td>
+			<td colspan='".$length."'><h2>Results</h2></td>
 		</tr>
 		<tr>
-			<th><b><a href='browse.php?sort=name&order=0'>&uarr;</a> Name <a href='browse.php?sort=name&order=1'>&darr;</a></b></th>
-			<th><b><a href='browse.php?sort=drink&order=0'>&uarr;</a> Drink <a href='browse.php?sort=drink&order=1'>&darr;</a></b></th>
-			<th><b><a href='browse.php?sort=volume&order=0'>&uarr;</a> Volume <a href='browse.php?sort=volume&order=1'>&darr;</a></b></th>
-			<th><b><a href='browse.php?sort=rating&order=1'>&uarr;</a> Rating <a href='browse.php?sort=rating&order=0'>&darr;</a></b></th>
-			<th><b><a href='browse.php?sort=brand&order=0'>&uarr;</a> Brand <a href='browse.php?sort=brand&order=1'>&darr;</a></b></th>
-			<th><b><a href='browse.php?sort=alcohol_content&order=1'>&uarr;</a> Alcohol Content <a href='browse.php?sort=alcohol_content&order=0'>&darr;</a></b></th>
-			<th><b><a href='browse.php?sort=country&order=0'>&uarr;</a> Country <a href='browse.php?sort=country&order=1'>&darr;</a></b></th>
-			<th><b><a href='browse.php?sort=quantity&order=1'>&uarr;</a> Quantity <a href='browse.php?sort=quantity&order=0'>&darr;</a></b></th>
-			<th><b><a href='browse.php?sort=price&order=1'>&uarr;</a> Price <a href='browse.php?sort=price&order=0'>&darr;</a></b></th>
-			<th><b><a href='browse.php?sort=store_name&order=0'>&uarr;</a> Store Name <a href='browse.php?sort=store_name&order=1'>&darr;</a></b></th>
-			<th><b><a href='browse.php?sort=store_type&order=0'>&uarr;</a> Store Type <a href='browse.php?sort=store_type&order=1'>&darr;</a></b></th>
-			<th><b><a href='browse.php?sort=zip_code&order=1'>&uarr;</a> Zip Code <a href='browse.php?sort=zip_code&order=0'>&darr;</a></b></th>";
+			<th><b><a href='browse.php?sort=name&order=0'>&uarr;</a>Name<a href='browse.php?sort=name&order=1'>&darr;</a></b></th>
+			<th><b><a href='browse.php?sort=drink&order=0'>&uarr;</a>Drink<a href='browse.php?sort=drink&order=1'>&darr;</a></b></th>
+			<th><b><a href='browse.php?sort=volume&order=0'>&uarr;</a>Volume<a href='browse.php?sort=volume&order=1'>&darr;</a></b></th>
+			<th><b><a href='browse.php?sort=rating&order=1'>&uarr;</a>Rating<a href='browse.php?sort=rating&order=0'>&darr;</a></b></th>
+			<th><b><a href='browse.php?sort=brand&order=0'>&uarr;</a>Brand<a href='browse.php?sort=brand&order=1'>&darr;</a></b></th>
+			<th><b><a href='browse.php?sort=alcohol_content&order=1'>&uarr;</a>Alcohol Content<a href='browse.php?sort=alcohol_content&order=0'>&darr;</a></b></th>
+			<th><b><a href='browse.php?sort=country&order=0'>&uarr;</a>Country<a href='browse.php?sort=country&order=1'>&darr;</a></b></th>
+			<th><b><a href='browse.php?sort=quantity&order=1'>&uarr;</a>Quantity<a href='browse.php?sort=quantity&order=0'>&darr;</a></b></th>
+			<th><b><a href='browse.php?sort=price&order=1'>&uarr;</a>Price<a href='browse.php?sort=price&order=0'>&darr;</a></b></th>
+			<th><b><a href='browse.php?sort=store_name&order=0'>&uarr;</a>Store Name<a href='browse.php?sort=store_name&order=1'>&darr;</a></b></th>
+			<th><b><a href='browse.php?sort=store_type&order=0'>&uarr;</a>Store Type<a href='browse.php?sort=store_type&order=1'>&darr;</a></b></th>
+			<th><b><a href='browse.php?sort=zip_code&order=1'>&uarr;</a>Zip Code<a href='browse.php?sort=zip_code&order=0'>&darr;</a></b></th>";
 if(isset($_COOKIE['user'])){
 	$user = $_COOKIE['user'];
 	if($am->isAdmin($user))
-		echo "<th><b><a href='browse.php?sort=did&order=1'>&uarr;</a> Did <a href='browse.php?sort=did&order=0'>&darr;</a></b></th>";
+		echo "<th><b><a href='browse.php?sort=did&order=1'>&uarr;</a>DID<a href='browse.php?sort=did&order=0'>&darr;</a></b></th>";
 }
 			
 echo "</tr>";

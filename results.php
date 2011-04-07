@@ -7,8 +7,8 @@ $hf = new HeaderFooter();
 $am = new AccountManager();
 $s = new Sorter();
 $hf->header();
-$cat = $_POST['choice'];
-$text = $_POST['search'];
+$cat = $_GET['choice'];
+$text = $_GET['search'];
 
 $length = 12;
 if(isset($_COOKIE['user'])){
@@ -21,25 +21,37 @@ echo "<table align='center'>
 			<td colspan='".$length."'><h2>Results</h2></td>
 		</tr>
 		<tr>
-			<th><b><a href='browse.php?sort=name&order=0'>&uarr;</a> Name <a href='browse.php?sort=name&order=1'>&darr;</a></b></th>
-			<th><b><a href='browse.php?sort=drink&order=0'>&uarr;</a> Drink <a href='browse.php?sort=drink&order=1'>&darr;</a></b></th>
-			<th><b><a href='browse.php?sort=volume&order=0'>&uarr;</a> Volume <a href='browse.php?sort=volume&order=1'>&darr;</a></b></th>
-			<th><b><a href='browse.php?sort=rating&order=1'>&uarr;</a> Rating <a href='browse.php?sort=rating&order=0'>&darr;</a></b></th>
-			<th><b><a href='browse.php?sort=brand&order=0'>&uarr;</a> Brand <a href='browse.php?sort=brand&order=1'>&darr;</a></b></th>
-			<th><b><a href='browse.php?sort=alcohol_content&order=1'>&uarr;</a> Alcohol Content <a href='browse.php?sort=alcohol_content&order=0'>&darr;</a></b></th>
-			<th><b><a href='browse.php?sort=country&order=0'>&uarr;</a> Country <a href='browse.php?sort=country&order=1'>&darr;</a></b></th>
-			<th><b><a href='browse.php?sort=quantity&order=1'>&uarr;</a> Quantity <a href='browse.php?sort=quantity&order=0'>&darr;</a></b></th>
-			<th><b><a href='browse.php?sort=price&order=1'>&uarr;</a> Price <a href='browse.php?sort=price&order=0'>&darr;</a></b></th>
-			<th><b><a href='browse.php?sort=store_name&order=0'>&uarr;</a> Store Name <a href='browse.php?sort=store_name&order=1'>&darr;</a></b></th>
-			<th><b><a href='browse.php?sort=store_type&order=0'>&uarr;</a> Store Type <a href='browse.php?sort=store_type&order=1'>&darr;</a></b></th>
-			<th><b><a href='browse.php?sort=zip_code&order=1'>&uarr;</a> Zip Code <a href='browse.php?sort=zip_code&order=0'>&darr;</a></b></th>";
+			<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=name&order=0'>&uarr;</a>Name<a href='results.php?choice=".$cat."&search=".$text."&sort=name&order=1'>&darr;</a></b></th>
+			<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=drink&order=0'>&uarr;</a>Drink<a href='results.php?choice=".$cat."&search=".$text."&sort=drink&order=1'>&darr;</a></b></th>
+			<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=volume&order=0'>&uarr;</a>Volume<a href='results.php?choice=".$cat."&search=".$text."&sort=volume&order=1'>&darr;</a></b></th>
+			<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=rating&order=1'>&uarr;</a>Rating<a href='results.php?choice=".$cat."&search=".$text."&sort=rating&order=0'>&darr;</a></b></th>
+			<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=brand&order=0'>&uarr;</a>Brand<a href='results.php?choice=".$cat."&search=".$text."&sort=brand&order=1'>&darr;</a></b></th>
+			<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=alcohol_content&order=1'>&uarr;</a>Alcohol Content<a href='results.php?choice=".$cat."&search=".$text."&sort=alcohol_content&order=0'>&darr;</a></b></th>
+			<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=country&order=0'>&uarr;</a>Country<a href='results.php?choice=".$cat."&search=".$text."&sort=country&order=1'>&darr;</a></b></th>
+			<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=quantity&order=1'>&uarr;</a>Quantity<a href='results.php?choice=".$cat."&search=".$text."&sort=quantity&order=0'>&darr;</a></b></th>
+			<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=price&order=1'>&uarr;</a>Price<a href='results.php?choice=".$cat."&search=".$text."&sort=price&order=0'>&darr;</a></b></th>
+			<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=store_name&order=0'>&uarr;</a>Store Name<a href='results.php?choice=".$cat."&search=".$text."&sort=store_name&order=1'>&darr;</a></b></th>
+			<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=store_type&order=0'>&uarr;</a>Store Type<a href='results.php?choice=".$cat."&search=".$text."&sort=store_type&order=1'>&darr;</a></b></th>
+			<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=zip_code&order=1'>&uarr;</a>Zip Code<a href='results.php?choice=".$cat."&search=".$text."&sort=zip_code&order=0'>&darr;</a></b></th>";
 if(isset($_COOKIE['user'])){
 	$user = $_COOKIE['user'];
 	if($am->isAdmin($user))
-		echo "<th><b><a href='browse.php?sort=did&order=1'>&uarr;</a> Did <a href='browse.php?sort=did&order=0'>&darr;</a></b></th>";
+		echo "<th><b><a href='results.php?sort=did&order=1'>&uarr;</a>DID<a href='results.php?sort=did&order=0'>&darr;</a></b></th>";
 }
 
-$data = $s->searchData($cat, $text);
+$sort = 'name';
+$order = 0;
+//set sort category
+if(isset($_GET['sort'])){
+	$sort = $_GET['sort'];
+}
+
+//set sort order
+if(isset($_GET['order'])){
+	$order = $_GET['order'];
+}
+
+$data = $s->searchData($cat, $text, $sort, $order);
 $rows=0;
 foreach($data as $r){
 	$rows++;

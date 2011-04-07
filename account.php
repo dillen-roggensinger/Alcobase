@@ -29,7 +29,7 @@ if(isset($_COOKIE['user'])){
 	if($am->isAdmin($user)){
 		echo "<tr>
 				<td colspan='4' align='right'><a href='add.php'>Add to database</a></td>
-			</tr>;
+			</tr>";
 		
 	}
 	echo "<tr>

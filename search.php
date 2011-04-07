@@ -4,7 +4,7 @@ include('headerfooter.php');
 $hf = new HeaderFooter();
 $hf->header();
 ?>
-<form action="results.php" method="POST">
+<form action="results.php" method="GET">
 <table align="center">
 	<tr>
 		<td colspan="2"><h2>Search</h2></td>
