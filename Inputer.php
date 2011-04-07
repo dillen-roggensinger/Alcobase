@@ -3,11 +3,11 @@
 class Inputer{
 	
 	/*Inserts a new alcohol entry into the database.
-	 * Takes an array of length 12 that has:
-	 * (name, drink, volume, brand, did, alcohol_content, country, calories, type, year, flavor, rating)
+	 * Takes an array of length 11 that has:
+	 * (name, drink, volume, brand, alcohol_content, country, calories, type, year, flavor, rating)
 	 */
 	function insertAlcohol($input){
-		if(count($input)!=12){
+		if(count($input)!=11){
 			echo("Invalid input!");
 			return false;
 		}
@@ -27,10 +27,6 @@ class Inputer{
 		}
 		if(!$val->valid($input['brand'],1,100)){
 			echo("Invalid brand!<br>");
-			return false;
-		}
-		if($input['did']=="null" || !is_numeric($input['did'])){	//Can't be null
-			echo("Invalid did!<br>");
 			return false;
 		}
 		if($input['alcohol_content']!="null" && !is_numeric($input['alcohol_content'])){
@@ -62,23 +58,19 @@ class Inputer{
 			return false;
 		}
 		
-		$query="
-		SELECT a.did
-		FROM alcohol a
-		WHERE a.did=".$input['did'];
+		$query="SELECT max(a.did) as did FROM alcohol a";
 
 		$conn = oci_connect("der2127", "c00kie5", "w4111c.cs.columbia.edu:1521/adb");
 		$stid = oci_parse($conn, $query);
 		$err=oci_execute($stid);
 		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
-
-		if(isset($row[0])){
-			echo("Alcohol already exists!<br>");
-			return false;
-		}
 		
+		$did=$row['DID']+1;
+		
+		echo("Did: ".$did."<br>");
+
 		$query="INSERT INTO alcohol VALUES('" . $input['name'] . "','" . $input['drink'] . "'," . $input['volume']
-			 . ",'" . $input['brand'] . "'," . $input['did'] . "," . $input['alcohol_content'] . ",'"
+			 . ",'" . $input['brand'] . "'," . $did . "," . $input['alcohol_content'] . ",'"
 			 . $input['country'] . "'," . $input['calories'] . ",'" . $input['type'] . "'," . $input['year']
 			 . ",'" . $input['flavor'] . "'," . $input['rating'] . ")";
 		$stid = oci_parse($conn, $query);
@@ -346,7 +338,7 @@ class Inputer{
 		$query="
 		SELECT wc.did
 		FROM write_comment wc
-		WHERE wc.username='".$input['username']."' and wc.did=".$input['did'] . " and wc.time=sysdate";
+		WHERE wc.username='" . $input['username'] . "' and wc.did=" . $input['did'] . " and wc.time=sysdate";
 
 		$stid = oci_parse($conn, $query);
 		$err=oci_execute($stid);
