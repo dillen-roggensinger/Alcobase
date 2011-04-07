@@ -13,70 +13,36 @@
 			</tr>
 			<tr>
 				<td>Name</td>
-				<td>Name</td>
-			</tr>
-			<tr>
 				<td>Drink</td>
-				<td>Name</td>
-			</tr>
-			<tr>
 				<td>Volume</td>
-				<td>Name</td>
-			</tr>
-			<tr>
 				<td>Brand</td>
-				<td>Name</td>
-			</tr>
-			<tr>
 				<td>Alcohol Content</td>
-				<td>Name</td>
-			</tr>
-			<tr>
 				<td>Country</td>
-				<td>Name</td>
-			</tr>
-			<tr>
 				<td>".$attrib1."</td>
-				<td>Name</td>
-			</tr>
-			<tr>
 				<td>".$attrib2."</td>
-				<td>Name</td>
-			</tr>
-			<tr>
 				<td>Rating</td>
-				<td>Name</td>
-			</tr>
+			</tr>";
+	
+	echo "</table>
+		</br>
+		<table align='center'>
 			<tr>
 				<td>Quantity</td>
-				<td>Name</td>
-			</tr>
-			<tr>
 				<td>Price</td>
-				<td>Name</td>
-			</tr>
-			<tr>
 				<td>Store Name</td>
-				<td>Name</td>
-			</tr>
-			<tr>
 				<td>Store Type</td>
-				<td>Name</td>
-			</tr>
-			<tr>
 				<td>Store Hours</td>
-				<td>Name</td>
-			</tr>
-			<tr>
 				<td>Street Address</td>
-				<td>Name</td>
-			</tr>
+			</tr>";
+			
+	echo "</table>
+		</br>
+		<table align='center'>
 			<tr>
-				<td>Zip Code</td>
-				<td>Name</td>
-			</tr>
-		</table>";
+				<td colspan='2'><h2>Comment</h2></td>
+			</tr>";
 	
-	
+	echo "</table>";
+
 	$hf->footer();
 ?>

@@ -17,7 +17,7 @@ if(isset($_COOKIE['user'])){
 
 echo "<table align='center'>
 		<tr>
-			<td colspan='".$length."'><h2>Results</h2></td>
+			<td colspan='".$length."'><h2>Browse</h2></td>
 		</tr>
 		<tr>
 			<th><b><a href='browse.php?sort=name&order=0'>&uarr;</a>Name<a href='browse.php?sort=name&order=1'>&darr;</a></b></th>
@@ -66,7 +66,8 @@ foreach($data as $r){
 		if($length<13 && $count>12){
 			break;
 		}
-		echo "<td>".$c."</td>";
+		$did = $r['DID'];
+		echo "<td><a href='alcohol.php?did=".$did."'>".$c."</td>";
 	}
 	echo "</tr>";
 }

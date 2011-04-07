@@ -12,7 +12,6 @@ $hf->header();
 	<tr>
 		<td><input type="text" name="search"></td>
 		<td><SELECT NAME="choice">
-		<OPTION VALUE="">Choose a Category</OPTION>
 		<OPTION VALUE="name">Name</OPTION>
 		<OPTION VALUE="drink">Drink</OPTION>
 		<OPTION VALUE="volume">Volume</OPTION>
