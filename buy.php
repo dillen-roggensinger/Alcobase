@@ -32,7 +32,7 @@
 					<td>Bought Failed!</td>
 				</tr>
 				<tr>
-					<td>Already bought or please <a href='login.php>Login</a></td>
+					<td>Already bought or please <a href='login.php'>Login</a></td>
 				</tr>
 			</table>";
 	}

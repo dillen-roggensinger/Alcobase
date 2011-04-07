@@ -26,7 +26,7 @@
 					<td>Favorite Failed!</td>
 				</tr>
 				<tr>
-					<td>Already favorited or please <a href='login.php>Login</a></td>
+					<td>Already favorited or please <a href='login.php'>Login</a></td>
 				</tr>
 			</table>";
 	}
