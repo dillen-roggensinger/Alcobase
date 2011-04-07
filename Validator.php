@@ -119,7 +119,7 @@ class Validator{
 		if(!isset($text)){
 			return false;
 		}
-		$test = filter_var($text, FILTER_VALIDATE_REGEXP,array('options'=>array('regexp'=>'/^\w+$/')));
+		$test = filter_var($text, FILTER_VALIDATE_REGEXP,array('options'=>array('regexp'=>'/^[\w ]+$/')));
 		if(isset($test)){
 			return $test;
 		}

@@ -14,7 +14,7 @@ if(isset($array)){
 }
 echo("<strong>Successful Browse!</strong><br>");
 
-$array2=$sorter->searchData("drink","beer","name",0);
+$array2=$sorter->searchData("name","Bass ale","name",0);
 if(isset($array2)){
 	foreach($array2 as $r){
 		foreach($r as $c){
