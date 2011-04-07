@@ -50,7 +50,7 @@ class Retriever{
 			return false;
 		}
 		$query="
-		SELECT wc.username, wc.text, to_char(wc.time, 'Dy DD-Mon-YYYY HH12:MI AM')
+		SELECT wc.username, wc.text, to_char(wc.time, 'Dy DD-Mon-YYYY HH12:MI AM') as time
 		FROM write_comment wc
 		WHERE wc.did=" . $did;
 		
