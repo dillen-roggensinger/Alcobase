@@ -16,7 +16,7 @@ class HeaderFooter{
 			</script>
 			</head><body>\n
 			<div id='header'>\n
-			<h1><a href='index.php'>ALCOBASE</a></h1>\n
+			<h1><a href='ds_db_index.php'>ALCOBASE</a></h1>\n
 			<h3><a href='login.php'>Login</a>&nbsp;&nbsp;&nbsp;
 			<a href='account.php'>Account</a>&nbsp;&nbsp;&nbsp;
 			<a href='browse.php'>Browse</a>&nbsp;&nbsp;&nbsp;
