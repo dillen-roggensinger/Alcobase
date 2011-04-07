@@ -77,7 +77,7 @@ class Retriever{
 		}
 		
 		$query="
-		SELECT name, drink, volume, rating, brand, alcohol_content, country, quantity, price, store_name, store_type, location, time
+		SELECT name, drink, volume, rating, brand, alcohol_content, country, quantity, price, store_name, store_type, location, to_char(time, 'Dy DD-Mon-YYYY HH12:MI AM')
 		FROM alcohol natural join sold_at natural join bought
 		WHERE username='" . $username . "'";
 		
