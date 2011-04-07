@@ -23,7 +23,17 @@
 						//check email for duplicate
 						if($am->emailAvailable($email)){
 							$am->createAccount(0, $id, $pass, $email);
-							header('Location: login.php');
+							echo "<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN''http://www.w3.org/TR/html4/loose.dtd'>";
+							$hf->header();
+							echo "<table align='center'>
+								<tr>
+									<td><h2>Sign up Successful!</h2></td>
+								</tr>
+								<tr>
+									<td>Now you can <a href='login.php'>Login</a>.</td>
+								</tr>
+							</table>";
+							$hf->footer();
 						}
 						else{
 							echo "<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN''http://www.w3.org/TR/html4/loose.dtd'>";
@@ -36,6 +46,7 @@
 									<td><a href='signup.php'>Try again</a> with another email.</td>
 								</tr>
 							</table>";
+							$hf->footer();
 						}
 					}
 					else{
@@ -49,6 +60,7 @@
 								<td><a href='signup.php'>Try again</a></td>
 							</tr>
 						</table>";
+						$hf->footer();
 					}
 				}
 				else{
