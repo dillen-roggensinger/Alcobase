@@ -238,6 +238,7 @@ class AccountManager{
 		$err=oci_execute($stid);
 		
 		oci_close($conn);
+		
 		return true;
 	}
 }

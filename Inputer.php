@@ -212,7 +212,7 @@ class Inputer{
 		$row = oci_fetch_array($stid,OCI_BOTH+OCI_RETURN_NULLS);
 
 		if(isset($row[0])){
-			//echo("favorite entry already exists!<br>");
+//			echo("favorite entry already exists!<br>");
 			return false;
 		}
 		
