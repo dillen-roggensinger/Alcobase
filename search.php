@@ -9,9 +9,11 @@ $hf->header();
 	<tr>
 		<td colspan="2"><h2>Search</h2></td>
 	</tr>
+	</table>
+	<table align='center'>
 	<tr>
-		<td><input type="text" name="search"></td>
-		<td><SELECT NAME="choice">
+		<td><input type="text" name="search">&nbsp;&nbsp;&nbsp;
+		<SELECT NAME="choice">
 		<OPTION VALUE="name">Name</OPTION>
 		<OPTION VALUE="drink">Drink</OPTION>
 		<OPTION VALUE="volume">Volume</OPTION>
@@ -25,6 +27,8 @@ $hf->header();
 		
 		</SELECT></td>
 	</tr>
+	</table>
+	<table align='center'>
 	<tr>
 		<td colspan="2"><input type="submit" value="Search!"></td>
 	</tr>

@@ -3,8 +3,10 @@ class HeaderFooter{
 	public function header(){
 		echo "<html>\n
 			<head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\">
-			<title>Alcobase</title><link href=\"Style.css\" rel=\"stylesheet\" type=\"text/css\">
-			<style type=\"text/css\"><!--.style1 {font-family: Arial, Helvetica, sans-serif}--></style>\n
+			<title>Alcobase</title><!-- Framework CSS -->
+		    <link rel='stylesheet' href='css/screen.css' type='text/css' media='screen, projection'>
+		    <link rel='stylesheet' href='css/print.css' type='text/css' media='print'>
+		    <!--[if lt IE 8]><link rel='stylesheet' href='../../blueprint/ie.css' type='text/css' media='screen, projection'><![endif]-->
 			<script language='javascript' type='text/javascript'>
 			function limitText(limitField, limitCount, limitNum) {
 				if (limitField.value.length > limitNum) {
@@ -24,8 +26,7 @@ class HeaderFooter{
 			<a href='signup.php'>Sign Up</a>&nbsp;&nbsp;&nbsp;
 			<a href='passr.php'>Reset Password</a></h3>
 			</div>\n
-			<div id='contents'>\n
-			<p> </p>";
+			<div id='contents'>\n";
 	}
 	public function footer(){
 		echo "</div>\n

@@ -17,14 +17,15 @@ if(isset($_COOKIE['user'])){
 				<td colspan='7'><h3>Favorite</h3></td>
 			</tr>
 			<tr>
-				<th><b>Name</b></th>
-				<th><b>Drink</b></th>
-				<th><b>Volume</b></th>
-				<th><b>Rating</b></th>
-				<th><b>Brand</b></th>
-				<th><b>Alcohol Content</b></th>
-				<th><b>Country</b></th>
-			</tr>";
+				<td><b>Name</b></td>
+				<td><b>Drink</b></td>
+				<td><b>Volume</b></td>
+				<td><b>Rating</b></td>
+				<td><b>Brand</b></td>
+				<td><b>Alcohol Content</b></td>
+				<td><b>Country</b></td>
+			</tr>
+			";
 	$data = $ret->getFavorite($user);
 	$rows=0;
 	foreach($data as $r){
@@ -44,20 +45,21 @@ if(isset($_COOKIE['user'])){
 				<td colspan='13'><h3>Bought</h3></td>
 			</tr>
 			<tr>
-				<th><b>Name</b></th>
-				<th><b>Drink</b></th>
-				<th><b>Volume</b></th>
-				<th><b>Rating</b></th>
-				<th><b>Brand</b></th>
-				<th><b>Alcohol Content</b></th>
-				<th><b>Country</b></th>
-				<th><b>Quantity</b></th>
-				<th><b>Price</b></th>
-				<th><b>Store Name</b></th>
-				<th><b>Store Type</b></th>
-				<th><b>Location</b></th>
-				<th><b>Time</b></th>
-			</tr>";
+				<td><b>Name</b></td>
+				<td><b>Drink</b></td>
+				<td><b>Volume</b></td>
+				<td><b>Rating</b></td>
+				<td><b>Brand</b></td>
+				<td><b>Alcohol Content</b></td>
+				<td><b>Country</b></td>
+				<td><b>Quantity</b></td>
+				<td><b>Price</b></td>
+				<td><b>Store Name</b></td>
+				<td><b>Store Type</b></td>
+				<td><b>Location</b></td>
+				<td><b>Time</b></td>
+			</tr>
+			";
 	$data = $ret->getBought($user);
 	$rows=0;
 	foreach($data as $r){
@@ -70,21 +72,26 @@ if(isset($_COOKIE['user'])){
 			echo "<td>".$c."</td>";
 		}
 		echo "</tr>";
-	}	
+	}
 	echo "</table></br>
-		<table align='center'>
+		<table align='left'>
 			<tr>
 				<td><a href='passc.php'>Change Password</a></td>
-			</tr>";
+			</tr>
+		</table>";
 	if($am->isAdmin($user)){
-		echo "<tr>
+		echo "<table align='left'>
+			<tr>
 				<td><a href='add.php'>Add to database</a></td>
-			</tr>";
+			</tr>
+		</table>";
 		
 	}
-	echo "<tr>
+	echo "<table align='left'>
+		<tr>
 			<td><a href='logout.php'>Logout</a></td>
-		</tr>";
+		</tr>
+		</table>";
 }
 else
 	echo "<table align='center'>

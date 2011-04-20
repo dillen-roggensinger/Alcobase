@@ -57,6 +57,8 @@
 					<tr>
 						<td colspan='2'><input type='submit' value='Add'></td>
 					</tr>
+					</table>
+					<table align='center>
 					<tr>
 						<td colspan='2'><h2>Add Sold At Info</h2></td>
 					</tr>
@@ -91,6 +93,8 @@
 					<tr>
 						<td colspan='2'><input type='submit' value='Add'></td>
 					</tr>
+					</table>
+					<table align='center>
 					<tr>
 						<td colspan='2'><h2>Add Admin</h2></td>
 					</tr>

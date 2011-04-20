@@ -15,6 +15,8 @@
 				<tr>
 					<td><h2>Password Reset</h2></td>
 				</tr>
+				</table>
+				<table align='center'>
 				<tr>
 					<td>Check your email for your new password and <a href='login.php'>login</a></td>
 				</tr>

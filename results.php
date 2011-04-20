@@ -44,22 +44,22 @@ else{
 				<td colspan='".$length."'><h2>Results</h2></td>
 			</tr>
 			<tr>
-				<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=name&order=0'>&uarr;</a>Name<a href='results.php?choice=".$cat."&search=".$text."&sort=name&order=1'>&darr;</a></b></th>
-				<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=drink&order=0'>&uarr;</a>Drink<a href='results.php?choice=".$cat."&search=".$text."&sort=drink&order=1'>&darr;</a></b></th>
-				<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=volume&order=0'>&uarr;</a>Volume<a href='results.php?choice=".$cat."&search=".$text."&sort=volume&order=1'>&darr;</a></b></th>
-				<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=rating&order=1'>&uarr;</a>Rating<a href='results.php?choice=".$cat."&search=".$text."&sort=rating&order=0'>&darr;</a></b></th>
-				<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=brand&order=0'>&uarr;</a>Brand<a href='results.php?choice=".$cat."&search=".$text."&sort=brand&order=1'>&darr;</a></b></th>
-				<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=alcohol_content&order=1'>&uarr;</a>Alcohol Content<a href='results.php?choice=".$cat."&search=".$text."&sort=alcohol_content&order=0'>&darr;</a></b></th>
-				<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=country&order=0'>&uarr;</a>Country<a href='results.php?choice=".$cat."&search=".$text."&sort=country&order=1'>&darr;</a></b></th>
-				<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=quantity&order=1'>&uarr;</a>Quantity<a href='results.php?choice=".$cat."&search=".$text."&sort=quantity&order=0'>&darr;</a></b></th>
-				<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=price&order=1'>&uarr;</a>Price<a href='results.php?choice=".$cat."&search=".$text."&sort=price&order=0'>&darr;</a></b></th>
-				<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=store_name&order=0'>&uarr;</a>Store Name<a href='results.php?choice=".$cat."&search=".$text."&sort=store_name&order=1'>&darr;</a></b></th>
-				<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=store_type&order=0'>&uarr;</a>Store Type<a href='results.php?choice=".$cat."&search=".$text."&sort=store_type&order=1'>&darr;</a></b></th>
-				<th><b><a href='results.php?choice=".$cat."&search=".$text."&sort=location&order=1'>&uarr;</a>Location<a href='results.php?choice=".$cat."&search=".$text."&sort=location&order=0'>&darr;</a></b></th>";
+				<td><b><a href='results.php?choice=".$cat."&search=".$text."&sort=name&order=0'>&uarr;</a>Name<a href='results.php?choice=".$cat."&search=".$text."&sort=name&order=1'>&darr;</a></b></td>
+				<td><b><a href='results.php?choice=".$cat."&search=".$text."&sort=drink&order=0'>&uarr;</a>Drink<a href='results.php?choice=".$cat."&search=".$text."&sort=drink&order=1'>&darr;</a></b></td>
+				<td><b><a href='results.php?choice=".$cat."&search=".$text."&sort=volume&order=0'>&uarr;</a>Volume<a href='results.php?choice=".$cat."&search=".$text."&sort=volume&order=1'>&darr;</a></b></td>
+				<td><b><a href='results.php?choice=".$cat."&search=".$text."&sort=rating&order=1'>&uarr;</a>Rating<a href='results.php?choice=".$cat."&search=".$text."&sort=rating&order=0'>&darr;</a></b></td>
+				<td><b><a href='results.php?choice=".$cat."&search=".$text."&sort=brand&order=0'>&uarr;</a>Brand<a href='results.php?choice=".$cat."&search=".$text."&sort=brand&order=1'>&darr;</a></b></td>
+				<td><b><a href='results.php?choice=".$cat."&search=".$text."&sort=alcohol_content&order=1'>&uarr;</a>Alcohol Content<a href='results.php?choice=".$cat."&search=".$text."&sort=alcohol_content&order=0'>&darr;</a></b></td>
+				<td><b><a href='results.php?choice=".$cat."&search=".$text."&sort=country&order=0'>&uarr;</a>Country<a href='results.php?choice=".$cat."&search=".$text."&sort=country&order=1'>&darr;</a></b></td>
+				<td><b><a href='results.php?choice=".$cat."&search=".$text."&sort=quantity&order=1'>&uarr;</a>Quantity<a href='results.php?choice=".$cat."&search=".$text."&sort=quantity&order=0'>&darr;</a></b></td>
+				<td><b><a href='results.php?choice=".$cat."&search=".$text."&sort=price&order=1'>&uarr;</a>Price<a href='results.php?choice=".$cat."&search=".$text."&sort=price&order=0'>&darr;</a></b></td>
+				<td><b><a href='results.php?choice=".$cat."&search=".$text."&sort=store_name&order=0'>&uarr;</a>Store Name<a href='results.php?choice=".$cat."&search=".$text."&sort=store_name&order=1'>&darr;</a></b></td>
+				<td><b><a href='results.php?choice=".$cat."&search=".$text."&sort=store_type&order=0'>&uarr;</a>Store Type<a href='results.php?choice=".$cat."&search=".$text."&sort=store_type&order=1'>&darr;</a></b></td>
+				<td><b><a href='results.php?choice=".$cat."&search=".$text."&sort=location&order=1'>&uarr;</a>Location<a href='results.php?choice=".$cat."&search=".$text."&sort=location&order=0'>&darr;</a></b></td>";
 	if(isset($_COOKIE['user'])){
 		$user = $_COOKIE['user'];
 		if($am->isAdmin($user))
-			echo "<th><b><a href='results.php?sort=did&order=1'>&uarr;</a>DID<a href='results.php?sort=did&order=0'>&darr;</a></b></th>";
+			echo "<td><b><a href='results.php?sort=did&order=1'>&uarr;</a>DID<a href='results.php?sort=did&order=0'>&darr;</a></b></td>";
 	}
 	
 	

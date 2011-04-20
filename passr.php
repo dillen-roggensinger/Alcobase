@@ -10,10 +10,13 @@ $hf->header();
 	<tr>
 		<td colspan="2"><h2>Reset Password</h2></td>
 	</tr>
+</table>
+<table align="center">
 	<tr>
-		<td>Email:</td>
-		<td><input type="text" name="email"></td>
+		<td>Email:&nbsp;&nbsp;&nbsp;<input type="text" name="email"></td>
 	</tr>
+</table>
+<table align="center">
 	<tr>
 		<td colspan='2'><input type="submit" value="Reset Password"></td>
 	</tr>

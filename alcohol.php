@@ -99,15 +99,9 @@
 				</tr>";
 		$rows=0;
 		foreach($result as $r){
-			$rows++;
-			if($rows%2==0){
-				echo "<tr class='d0'><td>".$r['USERNAME']."</td><td>".$r['TIME']."</td></tr>";
-				echo "<tr class='d0'><td colspan='2'>".$r['TEXT']."</td></tr>";
-			}
-			else{
-				echo "<tr class='d1'><td>".$r['USERNAME']."</td><td>".$r['TIME']."</td></tr>";
-				echo "<tr class='d1'><td colspan='2'>".$r['TEXT']."</td></tr>";
-			}
+			echo "<tr><td>".$r['USERNAME']."</td><td>".$r['TIME']."</td></tr>";
+			echo "<tr><td colspan='2'>".$r['TEXT']."</td></tr>";
+			
 		}
 		echo "</table>
 			</br>
