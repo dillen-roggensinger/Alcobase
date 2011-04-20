@@ -17,7 +17,7 @@ class Inputer{
 			//echo("Invalid name!<br>");
 			return false;
 		}
-		if($input['drink']=="null" && !$val->valid($input['drink'],1,10)){	//Can't be null
+		if($input['drink']=="null" || !$val->validText($input['drink'],1,10)){	//Can't be null
 			//echo("Invalid drink!<br>");
 			return false;
 		}
@@ -33,7 +33,7 @@ class Inputer{
 			//echo("Invalid alcohol_content!<br>");
 			return false;
 		}
-		if(!$val->valid($input['country'],1,100)){
+		if(!$val->validText($input['country'],1,100)){
 			//echo("Invalid country!<br>");
 			return false;
 		}
@@ -41,7 +41,7 @@ class Inputer{
 			//echo("Invalid calories!<br>");
 			return false;
 		}
-		if(!$val->valid($input['type'],1,100)){
+		if(!$val->validText($input['type'],1,100)){
 			//echo("Invalid type!<br>");
 			return false;
 		}
@@ -49,7 +49,7 @@ class Inputer{
 			//echo("Invalid year!<br>");
 			return false;
 		}
-		if(!$val->valid($input['flavor'],1,100)){
+		if(!$val->validText($input['flavor'],1,100)){
 			//echo("Invalid flavor!<br>");
 			return false;
 		}

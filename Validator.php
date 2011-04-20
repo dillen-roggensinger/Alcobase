@@ -112,6 +112,22 @@ class Validator{
 		}
 	}
 	
+	/*Validate the text.
+	 * The text must be between the input length limits and only contain alphanumerics.
+	 */
+	function validText($text,$lowerLimit,$upperLimit){
+		if(!isset($text)){
+			return false;
+		}
+		if(strlen($text)>=$lowerLimit && strlen($text)<=$upperLimit){
+			$test = filter_var($text, FILTER_VALIDATE_REGEXP,array('options'=>array('regexp'=>'/^[a-zA-Z ]+$/')));
+			if(isset($test)){
+				return $test;
+			}
+			return false;
+		}
+	}
+	
 	/*Validate a search expression
 	 * Search expressions can only contain alpha numerics
 	 */
