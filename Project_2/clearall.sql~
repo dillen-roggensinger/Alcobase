@@ -1,0 +1,13 @@
+drop table object_write_comment;
+drop table object_favorite;
+drop table object_bought;
+drop table object_account;
+drop table object_sold_at;
+drop table object_alcohol;
+drop type BeerType;
+drop type WineType;
+drop type LiquorType;
+drop type WDrinkType;
+drop type AlcoholBaseType;
+drop type StoreType;
+drop type AddressType;

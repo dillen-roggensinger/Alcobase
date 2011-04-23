@@ -1,0 +1,65 @@
+create table object_alcohol(
+	did integer primary key,
+	alcohol AlcoholBaseType not null
+);
+
+create table object_stores(
+	sid integer primary key,
+	location StoreType not null
+);
+
+create table object_sold_at(
+	did integer,
+	sid integer,
+	quantity integer,
+	price real,
+	foreign key (did) references object_alcohol(did),
+	foreign key (sid) references object_stores(sid)
+);
+
+alter table object_sold_at
+add primary key(price,quantity,did,sid);
+
+create table object_account(
+admin integer,
+username varchar2(32) primary key,
+password varchar2(32) not null,
+email varchar2(300) not null
+);
+
+create table object_bought(
+username varchar2(32),
+time date,
+sid integer,
+did integer,
+quantity integer,
+price real,
+foreign key (did,quantity,price) references object_sold_at(did,quantity,price),
+foreign key (username) references object_account(username),
+foreign key (sid) references object_stores(sid)
+);
+
+alter table object_bought
+add primary key(time,username,quantity,price,did);
+
+create table object_favorite(
+username varchar(32),
+did integer,
+foreign key (did) references object_alcohol(did),
+foreign key (username) references object_account(username)
+);
+
+alter table object_favorite
+add primary key(did,username);
+
+create table object_write_comment(
+text varchar2(1000) not null,
+time date,
+username varchar2(32),
+did integer,
+foreign key (username) references object_account(username) on delete cascade,
+foreign key (did) references object_alcohol(did) on delete cascade
+);
+
+alter table object_write_comment
+add primary key(username,did,time);
