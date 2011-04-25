@@ -1,6 +1,7 @@
 create or replace type AlcoholBaseType as object (
 	name varchar2(100),
 	drink varchar2(10),
+	did integer,
 	volume real,
 	brand varchar2(100),
 	alcohol_content real,
@@ -13,7 +14,7 @@ create or replace type AlcoholBaseType as object (
 CREATE OR REPLACE TYPE BODY AlcoholBaseType IS
 	MEMBER PROCEDURE display (SELF IN OUT NOCOPY AlcoholBaseType) IS
 	BEGIN
-		DBMS_OUTPUT.PUT_LINE('Alcohol ' || name || 'is a ' || drink);
+		DBMS_OUTPUT.PUT_LINE('Alcohol ' || did || ', ' || name || ' is a ' || drink);
 	END;
 END;
 /

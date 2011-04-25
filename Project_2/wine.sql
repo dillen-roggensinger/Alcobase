@@ -3,6 +3,7 @@ create or replace type WineType under AlcoholBaseType(
 	year integer,
 	constructor function WineType(	--WineType constructor
 		a_name varchar2,
+		a_did integer,
 		a_volume real,
 		a_brand varchar2,
 		a_alcohol_content real,
@@ -17,6 +18,7 @@ create or replace type WineType under AlcoholBaseType(
 CREATE OR REPLACE TYPE BODY WineType IS
 	constructor function WineType(
 		a_name varchar2,
+		a_did integer,
 		a_volume real,
 		a_brand varchar2,
 		a_alcohol_content real,
@@ -29,6 +31,7 @@ CREATE OR REPLACE TYPE BODY WineType IS
 	BEGIN
 		self.name:=a_name;
 		self.drink:='wine';
+		self.did:=a_did;
 		self.volume:=volume;
 		self.brand:=brand;
 		self.alcohol_content:=a_alcohol_content;

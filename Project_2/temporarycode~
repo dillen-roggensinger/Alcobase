@@ -1,0 +1,8 @@
+
+
+INSERT INTO Person SELECT 234132345, 'Jill', REF(a) FROM AddressObjTable a WHERE a.snum = 23 AND a.sname = 'Cherry' AND etc.
+
+end with ;
+
+
+

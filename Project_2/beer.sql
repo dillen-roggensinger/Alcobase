@@ -3,6 +3,7 @@ create or replace type BeerType under AlcoholBaseType(
 	type varchar2(100),
 	constructor function BeerType(	--BeerType constructor
 		a_name varchar2,
+		a_did integer,
 		a_volume real,
 		a_brand varchar2,
 		a_alcohol_content real,
@@ -17,6 +18,7 @@ create or replace type BeerType under AlcoholBaseType(
 CREATE OR REPLACE TYPE BODY BeerType IS
 	constructor function BeerType(
 		a_name varchar2,
+		a_did integer,
 		a_volume real,
 		a_brand varchar2,
 		a_alcohol_content real,
@@ -29,6 +31,7 @@ CREATE OR REPLACE TYPE BODY BeerType IS
 	BEGIN
 		self.name:=a_name;
 		self.drink:='beer';
+		self.did:=a_did;
 		self.volume:=volume;
 		self.brand:=brand;
 		self.alcohol_content:=a_alcohol_content;

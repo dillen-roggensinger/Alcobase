@@ -3,6 +3,7 @@ create or replace type LiquorType under AlcoholBaseType(
 	year integer,
 	constructor function LiquorType(	--LiquorType constructor
 		a_name varchar2,
+		a_did integer,
 		a_volume real,
 		a_brand varchar2,
 		a_alcohol_content real,
@@ -17,6 +18,7 @@ create or replace type LiquorType under AlcoholBaseType(
 CREATE OR REPLACE TYPE BODY LiquorType IS
 	constructor function LiquorType(
 		a_name varchar2,
+		a_did integer,
 		a_volume real,
 		a_brand varchar2,
 		a_alcohol_content real,
@@ -29,6 +31,7 @@ CREATE OR REPLACE TYPE BODY LiquorType IS
 	BEGIN
 		self.name:=a_name;
 		self.drink:='liquor';
+		self.did:=a_did;
 		self.volume:=volume;
 		self.brand:=brand;
 		self.alcohol_content:=a_alcohol_content;

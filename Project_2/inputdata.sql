@@ -40,40 +40,4 @@ INSERT INTO object_alcohol VALUES(39,WDrinkType('Mikes Mike-arita',12,'Mikes Har
 INSERT INTO object_alcohol VALUES(40,WDrinkType('Mikes Hard Mango Punch',12,'Mikes Hard Lemonade Co.',5.5,'America',225,'Mango',4.291));
 INSERT INTO object_alcohol VALUES(41,WDrinkType('Mikes Hard Fruit Punch',12,'Mikes Hard Lemonade Co.',5.5,'America',225,'Fruit Punch',4.173));
 
---Accounts
-INSERT INTO account VALUES(0,'ninjaturtles','p4ssw0rd','abc@gmail.com');
-INSERT INTO account VALUES(1,'sexytime','bestPASSWORDever1','def@gmail.com');
-INSERT INTO account VALUES(0,'friday1234','letmeinnowplease1','ghi@gmail.com');
-INSERT INTO account VALUES(0,'ragingbull','abcd1234','jkl@gmail.com');
-INSERT INTO account VALUES(0,'mysticshadow','Iamabanana1','mno@gmail.com');
-INSERT INTO account VALUES(0,'trollolol','weeeeeeeee1','pqr@gmail.com');
-INSERT INTO account VALUES(1,'babycakes','iLoveThisSite1','stu@gmail.com');
-INSERT INTO account VALUES(0,'newuser1234','youllneverguessthis1','vwx@gmail.com');
-INSERT INTO account VALUES(0,'bigdaddy','hahahayeah1','yandz@gmail.com');
-INSERT INTO account VALUES(0,'cookiemonster','imadeapassword1','nomoreletters@gmail.com');
-INSERT INTO account VALUES(1,'Badoofer108','getonmylevel1','dillen.roggensinger@gmail.com');
-INSERT INTO account VALUES(1,'imanadmin','cunt12345','superhappyfunsexytime@gmail.com');
 
---Stores
-INSERT INTO sold_at VALUES('2903 Broadway New York NY 10025','International Wine and Spirits','Mon-Sat: 11:00 am - 10:00 pm','Liquor Store',2,1,22.99);
-INSERT INTO sold_at VALUES('2903 Broadway New York NY 10025','International Wine and Spirits','Mon-Sat: 11:00 am - 10:00 pm','Liquor Store',22,1,24.99);
-INSERT INTO sold_at VALUES('2903 Broadway New York NY 10025','International Wine and Spirits','Mon-Sat: 11:00 am - 10:00 pm','Liquor Store',24,1,34.99);
-INSERT INTO sold_at VALUES('2903 Broadway New York NY 10025','International Wine and Spirits','Mon-Sat: 11:00 am - 10:00 pm','Liquor Store',31,1,35.99);
-INSERT INTO sold_at VALUES('2903 Broadway New York NY 10025','International Wine and Spirits','Mon-Sat: 11:00 am - 10:00 pm','Liquor Store',8,1,40.99);
-INSERT INTO sold_at VALUES('3139 Broadway New York NY 10027','Jiminez Ramon','Mon-Sat: 11:00 am - 10:00 pm','Liquor Store',27,1,100);
-INSERT INTO sold_at VALUES('3139 Broadway New York NY 10027','Jiminez Ramon','Mon-Sat: 11:00 am - 10:00 pm','Liquor Store',30,1,32);
-INSERT INTO sold_at VALUES('3139 Broadway New York NY 10027','Jiminez Ramon','Mon-Sat: 11:00 am - 10:00 pm','Liquor Store',31,1,35);
-INSERT INTO sold_at VALUES('3139 Broadway New York NY 10027','Jiminez Ramon','Mon-Sat: 11:00 am - 10:00 pm','Liquor Store',5,1,15);
-INSERT INTO sold_at VALUES('3139 Broadway New York NY 10027','Jiminez Ramon','Mon-Sat: 11:00 am - 10:00 pm','Liquor Store',25,1,30);
-INSERT INTO sold_at VALUES('2941 Broadway New York NY 10027','Morton Williams','24/7','Grocery Store',6,1,12.99);
-INSERT INTO sold_at VALUES('2941 Broadway New York NY 10027','Morton Williams','24/7','Grocery Store',11,6,12.99);
-INSERT INTO sold_at VALUES('2941 Broadway New York NY 10027','Morton Williams','24/7','Grocery Store',14,6,13.99);
-INSERT INTO sold_at VALUES('2941 Broadway New York NY 10027','Morton Williams','24/7','Grocery Store',18,6,11.99);
-INSERT INTO sold_at VALUES('1225 Amsterdam Avenue New York NY 10027','Apple Tree Supermarket','24/7','Grocery Store',11,6,11.99);
-INSERT INTO sold_at VALUES('1225 Amsterdam Avenue New York NY 10027','Apple Tree Supermarket','24/7','Grocery Store',12,6,11.99);
-INSERT INTO sold_at VALUES('1225 Amsterdam Avenue New York NY 10027','Apple Tree Supermarket','24/7','Grocery Store',17,6,12.99);
-INSERT INTO sold_at VALUES('1225 Amsterdam Avenue New York NY 10027','Apple Tree Supermarket','24/7','Grocery Store',3,6,14.99);
-INSERT INTO sold_at VALUES('990 Amsterdam Avenue New York NY 10025','Gourmet Deli Inc','24/7','Deli',13,6,10.99);
-INSERT INTO sold_at VALUES('990 Amsterdam Avenue New York NY 10025','Gourmet Deli Inc','24/7','Deli',18,6,10.99);
-INSERT INTO sold_at VALUES('990 Amsterdam Avenue New York NY 10025','Gourmet Deli Inc','24/7','Deli',15,6,11.99);
-INSERT INTO sold_at VALUES('990 Amsterdam Avenue New York NY 10025','Gourmet Deli Inc','24/7','Deli',20,6,10.99);
