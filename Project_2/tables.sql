@@ -12,7 +12,9 @@ create table object_sold_at(
 	did integer,
 	sid integer,
 	quantity integer,
-	price real
+	price real,
+	foreign key(did) references object_alcohol(did),
+	foreign key(sid) references object_stores(sid)
 );
 
 alter table object_sold_at

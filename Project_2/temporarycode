@@ -1,4 +1,32 @@
 
+CREATE OR REPLACE TYPE BODY AlcoholBaseType IS
+	MEMBER PROCEDURE display (SELF IN OUT NOCOPY AlcoholBaseType) IS
+	BEGIN
+		DBMS_OUTPUT.PUT_LINE('Alcohol ' || did || ', ' || name || ' is a ' || drink);
+	END;
+	ORDER MEMBER FUNCTION isequalto(other AlcoholBaseType)RETURN NUMBER IS
+		false_value NUMBER := 0;
+		true_value  NUMBER := 1;
+	BEGIN
+		IF SELF.name = other.name AND SELF.drink = other.drink THEN
+			RETURN true_value;
+		ELSE
+			RETURN false_value;
+		END IF;
+	END;
+	ORDER MEMBER FUNCTION ispopular RETURN NUMBER IS
+		false_value NUMBER := 0;
+		true_value  NUMBER := 1;
+	BEGIN
+		IF SELF.rating > 4 THEN
+			RETURN true_value;
+		ELSE
+			RETURN false_value;
+		END IF;
+	END;
+END;
+/
+
 
 INSERT INTO Person SELECT 234132345, 'Jill', REF(a) FROM AddressObjTable a WHERE a.snum = 23 AND a.sname = 'Cherry' AND etc.
 

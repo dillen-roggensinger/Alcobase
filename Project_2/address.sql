@@ -2,14 +2,27 @@ create or replace type AddressType AS OBJECT (
 	street VARCHAR2(100),
 	city VARCHAR2(100),
 	state CHAR(2),
-	zip VARCHAR2(10)
-	MEMBER FUNCTION chkAddrs(addr1 AddressType, addr2 AddressType)
-);
+	zip VARCHAR2(10),
+	MEMBER PROCEDURE display,
+	MEMBER FUNCTION isequalto(other AddressType) RETURN NUMBER
+) INSTANTIABLE NOT FINAL;
 /
 
-CREATE OR REPLACE TYPE BODY AddressTypeFUNCTION chkAddrs (addr1 address, addr2 address)
-    RETURN BOOLEAN
-    IS
-BEGIN
-    RETURN (addr1.zip_code == addr2.zip_code) AND (addr1.street == addr2.street)
-END chkAddrs; 
+CREATE OR REPLACE TYPE BODY AddressType IS
+	MEMBER PROCEDURE display (SELF IN OUT NOCOPY AddressType) IS
+	BEGIN
+		DBMS_OUTPUT.PUT_LINE(street);
+		DBMS_OUTPUT.PUT_LINE(city || ', ' || state || ', ' || zip);
+	END;
+	MEMBER FUNCTION isequalto(other AddressType)RETURN NUMBER IS
+		false_value NUMBER := 0;
+		true_value  NUMBER := 1;
+	BEGIN
+		IF SELF.street = other.street AND SELF.zip = other.zip   THEN
+			RETURN true_value;
+		ELSE
+			RETURN false_value;
+		END IF;
+	END;
+END;
+/
